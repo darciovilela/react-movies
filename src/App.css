@@ -51,3 +51,15 @@ table {
   margin-right: auto;
   margin-left: auto;
 }
+
+.App-footer {
+  background-color: #8d8f92;
+  font-size: 12px;
+  color: black;
+  position: fixed;
+  padding: 0px 0px 20px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 15px;
+}
