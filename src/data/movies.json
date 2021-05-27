@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Alien",
+    "director": "Ridley Scott",
+    "released": "1979"
+  },
+  {
+    "name": "Raging Bull",
+    "director": "Martin Scorsese",
+    "released": "1980"
+  },
+  {
+    "name": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "released": "1972"
+  },
+  {
+    "name": "El Secreto de sus ojos",
+    "director": "Juan José Campanella",
+    "released": "2009"
+  },
+  {
+    "name": "Carrie",
+    "director": "Brian De Palma",
+    "released": "1976"
+  },
+  {
+    "name": "Carlitos Way",
+    "director": "Brian De Palma",
+    "released": "1993"
+  },
+  {
+    "name": "Pans Labirint",
+    "director": "Guillermo Del Toro",
+    "released": "2006"
+  },
+  {
+    "name": "The Shining",
+    "director": "Stanley Kubrick",
+    "released": "1980"
+  },
+  {
+    "name": "Seven",
+    "director": "David Fincher",
+    "released": "1995"
+  },
+  {
+    "name": "Collateral",
+    "director": "Michael Mann",
+    "released": "2004"
+  }
+]
