@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Al Pacino",
+    "born": "04/25/1940",
+    "city": "New York/USA"
+   },
+  {
+    "name": "Jack Nicholson",
+    "born": "04/22/1937",
+    "city": "New Jersey/USA"
+  },
+  {
+    "name": "Michelle Pfeiffer",
+    "born": "04/29/1958",
+    "city": "Santa Ana/USA"
+  },
+  {
+    "name": "Meryl Streep",
+    "born": "06/22/1949",
+    "city": "New Jersey/USA"
+  },
+  {
+    "name": "Ricardo Darín",
+    "born": "01/16/1957",
+    "city": "Buenos Aires/Argentina"
+  },
+  {
+    "name": "Denzel Washington",
+    "born": "12/28/1954",
+    "city": "Mount Vernon/USA"
+  },
+  {
+    "name": "Anthony Hopkins",
+    "born": "12/31/1937",
+    "city": "Margam/UK"
+  },
+  {
+    "name": "Robert De Niro",
+    "born": "08/17/1943",
+    "city": "New York/USA"
+  },
+  {
+    "name": "Joaquin Phoenix",
+    "born": "10/28/1974",
+    "city": "San Juan/Porto Rico"
+  },
+  {
+    "name": "Charlize Theron",
+    "born": "08/07/1975",
+    "city": "Benoni/South Africa"
+  }
+]

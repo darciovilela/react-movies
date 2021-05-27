@@ -8,12 +8,6 @@
   margin-top: 20px;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 40s linear;
-  }
-}*/
-
 .App-header {
   background-color: #2f50ac;
   display: flex;
@@ -47,19 +41,37 @@
   text-align: left;
 }
 
+.Actors-table-head {
+  background-color: #714992;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.Actors-table-body {
+  background-color: #4f5052;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+}
+
 table {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 40px;
+  column-width: 100px;
+}
+
+th {
+  height: 30px;
 }
 
 .App-footer {
   background-color: #8d8f92;
   font-size: 12px;
   color: black;
-  position: fixed;
-  padding: 0px 0px 20px;
-  bottom: 0;
+  padding: 5px 0px 30px 0px;
   width: 100%;
   /* Height of the footer*/
-  height: 15px;
+  height: 10px;
 }
