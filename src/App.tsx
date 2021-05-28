@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { MoviesList } from './components/MoviesList';
 import { Footer } from './components/Footer';
 import { ActorsList } from './components/ActorsList';
+import { LastSeen } from './components/LastSeen';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Header />
       <MoviesList />
       <ActorsList />
+      <LastSeen />
+
       <Footer />
     </div>
   );

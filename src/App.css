@@ -38,7 +38,7 @@
   background-color: #4f5052;
   font-size: 18px;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 
 .Actors-table-head {
@@ -52,18 +52,36 @@
   background-color: #4f5052;
   font-size: 18px;
   color: white;
-  text-align: left;
+  text-align: center;
+}
+.Lastseen-table-head {
+  background-color: #667e0f;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.Lastseen-table-body {
+  background-color: #4f5052;
+  font-size: 18px;
+  color: white;
+  text-align: center;
 }
 
 table {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 40px;
-  column-width: 100px;
 }
 
 th {
+  height: 35px;
+  padding: 10px;
+}
+
+td {
   height: 30px;
+  padding: 10px;
 }
 
 .App-footer {
