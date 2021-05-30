@@ -1,3 +1,30 @@
+* [Description](#description)
+* [Installation](#installation)
+
+## Description
+
+Personal web site about movies with React.
+
+#### Technology
+
+* Bootstrap 4
+* React 17
+* Node 12
+
+
+## Installation
+
+#### Development
+
+```bash
+# Install dependencies
+yarn install
+
+# Start server
+yarn start
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
