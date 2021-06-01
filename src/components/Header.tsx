@@ -1,4 +1,4 @@
-import logo from '../new_logo_movie.png';
+import logo from '../img/new_logo_movie.png';
 
 export const Header = () => {
   return (
