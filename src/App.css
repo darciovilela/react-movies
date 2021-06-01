@@ -70,9 +70,13 @@
 }
 
 table {
-  margin-right: auto;
+  width: 70%;
+  margin-bottom: 50px;
+}
+
+table.center {
   margin-left: auto;
-  margin-bottom: 40px;
+  margin-right: auto;
 }
 
 th {

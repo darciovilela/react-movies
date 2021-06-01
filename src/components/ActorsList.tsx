@@ -4,7 +4,7 @@ export const ActorsList = () => {
   return (
     <div>
       <h2>My {actors.length} Favorite Artists:</h2>
-      <table>
+      <table className="center">
         <thead className="Actors-table-head">
           <tr>
             <th>Name</th>

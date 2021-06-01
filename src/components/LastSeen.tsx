@@ -4,7 +4,7 @@ export const LastSeen = () => {
   return (
     <div>
       <h2>My {lastseen.length} last seen movies:</h2>
-      <table>
+      <table className="center">
         <thead className="Lastseen-table-head">
           <tr>
             <th>Name</th>
