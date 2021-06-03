@@ -69,6 +69,20 @@
   text-align: center;
 }
 
+.LatinMovies-table-head {
+  background-color: #cf820f;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.LatinMovies-table-body {
+  background-color: #4f5052;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
 table {
   width: 70%;
   margin-bottom: 50px;

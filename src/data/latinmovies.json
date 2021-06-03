@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Official Story",
+    "country": "Argentina",
+    "released": "1985"
+  },
+  {
+    "name": "Whisky",
+    "country": "Uruguay",
+    "released": "2004"
+  },
+  {
+    "name": "Maria, llena de gracia",
+    "country": "Colombia",
+    "released": "2004"
+  },
+  {
+    "name": "Amores Perros",
+    "country": "Mexico",
+    "released": "2000"
+  },
+  {
+    "name": "Contra Corrente",
+    "country": "Peru",
+    "released": "2009"
+  },
+  {
+    "name": "La delgada línea amarilla",
+    "country": "Mexico",
+    "released": "2015"
+  },
+  {
+    "name": "El baño del Papa",
+    "country": "Uruguay",
+    "released": "2007"
+  }
+]
