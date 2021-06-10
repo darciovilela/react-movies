@@ -1,23 +1,19 @@
-- [Description](#description)
-- [Installation](#installation)
 
-## Description
+## A Simple React website with TypeScript
 
-Personal web site about movies with React.
+Personal website about movies.
 
-#### Technology
+## Technology
 
 - React 17
 - Node 12
 
-## Installation
+## Running locally
+- git clone https://github.com/darciovilela/react-movies.git
+- cd react-movies
 
-#### Development
+## Install dependencies
+- yarn
 
-# Install dependencies
-
-yarn install
-
-# Start server
-
-yarn start
+## Start server
+- yarn start
