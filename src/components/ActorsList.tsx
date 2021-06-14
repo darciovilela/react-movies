@@ -1,4 +1,5 @@
-import actors from '../data/actors.json';
+import db from '../data/db.json';
+const actors = db.actors;
 
 export const ActorsList = () => {
   return (

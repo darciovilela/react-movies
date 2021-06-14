@@ -1,4 +1,5 @@
-import movies from '../data/movies.json';
+import db from '../data/db.json';
+const movies = db.movies;
 
 export const MoviesList = () => {
   return (

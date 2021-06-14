@@ -1,4 +1,5 @@
-import latinmovies from '../data/latinmovies.json';
+import db from '../data/db.json';
+const latinmovies = db.latinmovies;
 
 export const LatinMovies = () => {
   return (

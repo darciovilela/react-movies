@@ -1,4 +1,5 @@
-import lastseen from '../data/lastseen.json';
+import db from '../data/db.json';
+const lastseen = db.lastseen;
 
 export const LastSeen = () => {
   return (
