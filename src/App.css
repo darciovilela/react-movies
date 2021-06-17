@@ -3,20 +3,35 @@
   background-color: blanchedalmond;
 }
 
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
-  margin-top: 20px;
-}
-
 .App-header {
+  height: 180px;
+  padding: 20px;
   background-color: #2f50ac;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(12px + 2vmin);
   color: white;
+  text-align: left;
+}
+
+.App-logo {
+  height: 120px;
+  pointer-events: none;
+  margin: 20px;
+  float: left;
+}
+
+.App-header ul {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.App-header ul li {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background: darkblue;
+  margin-right: 2px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {
