@@ -1,7 +1,29 @@
-import db from '../data/db.json';
-const latinmovies = db.latinmovies;
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+interface LatinMovie {
+  name: string;
+  country: string;
+  released: string;
+}
 
 export const LatinMovies = () => {
+  const [latinmovies, setLatinMovies] = useState<LatinMovie[]>([]);
+
+  useEffect(() => {
+    const callFetchFunction = async () => {
+      const result = await axios.get<LatinMovie[]>(
+        'http://localhost:4000/latinmovies'
+      );
+      setLatinMovies(result.data);
+    };
+    callFetchFunction();
+  }, []);
+
+  if (!latinmovies.length) {
+    return <div>Loading... (or empty)</div>;
+  }
+
   return (
     <div>
       <h2>{latinmovies.length} Latin Movies that you must see:</h2>

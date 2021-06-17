@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// declaracao do que sera passado na interface
 interface Movie {
   name: string;
   director: string;
   released: string;
 }
-
+// inicio do estado com array vazio
 export const MoviesList = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
 

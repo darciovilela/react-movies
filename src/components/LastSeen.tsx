@@ -1,7 +1,29 @@
-import db from '../data/db.json';
-const lastseen = db.lastseen;
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+interface LastSeen {
+  name: string;
+  about: string;
+  rating: string;
+}
 
 export const LastSeen = () => {
+  const [lastseen, setLastSeen] = useState<LastSeen[]>([]);
+
+  useEffect(() => {
+    const callFetchFunction = async () => {
+      const result = await axios.get<LastSeen[]>(
+        'http://localhost:4000/lastseen'
+      );
+      setLastSeen(result.data);
+    };
+    callFetchFunction();
+  }, []);
+
+  if (!lastseen.length) {
+    return <div>Loading... (or empty)</div>;
+  }
+
   return (
     <div>
       <h2>My {lastseen.length} last seen movies:</h2>

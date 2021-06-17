@@ -4,18 +4,27 @@
 }
 
 .App-header {
-  height: 180px;
+  height: 150px;
   padding: 20px;
   background-color: #2f50ac;
-  font-size: calc(12px + 2vmin);
   color: white;
   text-align: left;
+}
+
+.p-header {
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+span {
+  font-size: 20px;
 }
 
 .App-logo {
   height: 120px;
   pointer-events: none;
-  margin: 20px;
+  margin: 20px 50px 20px 20px;
   float: left;
 }
 
@@ -27,6 +36,7 @@
 .App-header ul li {
   display: inline-block;
   width: 200px;
+  height: 25px;
   text-align: center;
   background: darkblue;
   margin-right: 2px;
@@ -34,13 +44,8 @@
   cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header ul li:hover {
+  color: rgb(211, 177, 136);
 }
 
 .Movie-table-head {

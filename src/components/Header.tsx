@@ -8,9 +8,9 @@ export const Header = (props: IProps) => {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        <b>All kind of movies. Old and new classics.</b> <br />
-        Lots seen more than once.
+      <p className="p-header">
+        All kind of movies. Old and new classics. <br />
+        <span>Lots seen more than once.</span>
       </p>
       <div>
         <ul>
