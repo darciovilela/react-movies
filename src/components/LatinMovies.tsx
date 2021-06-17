@@ -16,7 +16,7 @@ export const LatinMovies = () => {
         <tbody className="LatinMovies-table-body">
           {latinmovies.map((item) => {
             return (
-              <tr>
+              <tr key={item.name}>
                 <td>{item.name}</td>
                 <td>{item.country}</td>
                 <td>{item.released}</td>

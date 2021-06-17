@@ -16,7 +16,7 @@ export const ActorsList = () => {
         <tbody className="Actors-table-body">
           {actors.map((item) => {
             return (
-              <tr>
+              <tr key={item.name}>
                 <td>{item.name}</td>
                 <td>{item.born}</td>
                 <td>{item.city}</td>

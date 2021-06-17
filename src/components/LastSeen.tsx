@@ -16,7 +16,7 @@ export const LastSeen = () => {
         <tbody className="Lastseen-table-body">
           {lastseen.map((item) => {
             return (
-              <tr>
+              <tr key={item.name}>
                 <td>{item.name}</td>
                 <td>{item.about}</td>
                 <td>{item.rating}</td>
