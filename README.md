@@ -7,6 +7,7 @@ Personal website about movies.
 
 - React 17
 - Node 12
+- Json server
 
 ## Running locally
 - git clone https://github.com/darciovilela/react-movies.git
@@ -17,3 +18,6 @@ Personal website about movies.
 
 ## Start server
 - yarn start
+
+## Start DB
+- yarn db
