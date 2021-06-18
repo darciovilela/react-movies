@@ -26,7 +26,7 @@ export const LastSeen = () => {
 
   return (
     <div>
-      <h2>My {lastseen.length} last seen movies:</h2>
+      <h1>My {lastseen.length} last seen movies:</h1>
       <table className="center">
         <thead className="Lastseen-table-head">
           <tr>

@@ -26,7 +26,7 @@ export const LatinMovies = () => {
 
   return (
     <div>
-      <h2>{latinmovies.length} Latin Movies that you must see:</h2>
+      <h1>{latinmovies.length} Latin Movies that you must see:</h1>
       <table className="center">
         <thead className="LatinMovies-table-head">
           <tr>
