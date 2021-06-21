@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Movie } from './MoviesList';
+import { Actor } from './ActorsList';
 
-const emptyMovie: Movie = {
+const emptyActor: Actor = {
   name: '',
-  director: '',
-  released: '',
+  born: '',
+  city: '',
 };
 
 interface IProps {
   setDate: Function;
 }
 
-export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyMovie);
+export const ActorsForm: React.FC<IProps> = ({ setDate }) => {
+  const [formState, setFormState] = useState(emptyActor);
 
-  const createMovie = async (movie: Movie) => {
-    const result = await axios.post<Movie>(
-      'http://localhost:4000/movies',
-      movie
+  const createActor = async (actor: Actor) => {
+    const result = await axios.post<Actor>(
+      'http://localhost:4000/actors',
+      actor
     );
   };
 
@@ -31,9 +31,9 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    createMovie(formState);
+    createActor(formState);
     setDate(+new Date());
-    setFormState(emptyMovie);
+    setFormState(emptyActor);
   };
 
   return (
@@ -49,20 +49,20 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
           />
         </div>
         <div>
-          <label>Director:</label>
+          <label>Born:</label>
           <input
             type="text"
-            name="director"
-            value={formState.director}
+            name="born"
+            value={formState.born}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label>Released:</label>
+          <label>City:</label>
           <input
             type="text"
-            name="released"
-            value={formState.released}
+            name="city"
+            value={formState.city}
             onChange={handleChange}
           />
         </div>
