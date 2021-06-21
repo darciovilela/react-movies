@@ -1,24 +1,28 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { MoviesForm } from './MoviesForm';
 
 // declaracao do que sera passado na interface
-interface Movie {
+export interface Movie {
+  id?: string;
   name: string;
   director: string;
   released: string;
 }
+
 // inicio do estado com array vazio
 export const MoviesList = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [date, setDate] = useState(+new Date());
 
-  // componentDidMount
+  // componentDidMount or variable date was changed
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Movie[]>('http://localhost:4000/movies');
       setMovies(result.data);
     };
     callFetchFunction();
-  }, []);
+  }, [date]);
 
   if (!movies.length) {
     return <div>Loading... (or empty)</div>;
@@ -27,6 +31,7 @@ export const MoviesList = () => {
   return (
     <div>
       <h1>My {movies.length} Favorite Movies:</h1>
+      <MoviesForm setDate={setDate} />
       <table className="center">
         <thead className="Movie-table-head">
           <tr>
@@ -38,7 +43,7 @@ export const MoviesList = () => {
         <tbody className="Movie-table-body">
           {movies.map((item) => {
             return (
-              <tr key={item.name}>
+              <tr key={item.id}>
                 <td>{item.name}</td>
                 <td>{item.director}</td>
                 <td>{item.released}</td>
