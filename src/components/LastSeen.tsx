@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { LastSeenForm } from './LastSeenForm';
 
-interface LastSeenMovie {
+// declaracao do que sera passado na interface
+export interface Last {
   name: string;
   about: string;
   rating: string;
 }
 
 export const LastSeen = () => {
-  const [lastseen, setLastSeen] = useState<LastSeenMovie[]>([]);
+  const [lastseen, setLastSeen] = useState<Last[]>([]);
+  const [date, setDate] = useState(+new Date());
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<LastSeenMovie[]>(
-        'http://localhost:4000/lastseen'
-      );
+      const result = await axios.get<Last[]>('http://localhost:4000/lastseen');
       setLastSeen(result.data);
     };
     callFetchFunction();
@@ -27,6 +28,7 @@ export const LastSeen = () => {
   return (
     <div>
       <h1>My {lastseen.length} last seen movies:</h1>
+      <LastSeenForm setDate={setDate} />
       <table className="center">
         <thead className="Lastseen-table-head">
           <tr>
