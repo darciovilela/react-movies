@@ -66,7 +66,7 @@ export const ActorsForm: React.FC<IProps> = ({ setDate }) => {
             onChange={handleChange}
           />
         </div>
-        <input type="submit" />
+        <input className="submit" type="submit" />
       </form>
     </div>
   );

@@ -52,7 +52,7 @@ span {
 
 h1 {
   font-size: 30px;
-  margin-top: 100px;
+  margin-top: 70px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -151,4 +151,19 @@ td {
 
 input {
   font-size: 16px;
+  margin: 5px;
+  display: inline-block;
+}
+
+label {
+  font-size: 16px;
+}
+
+.submit {
+  margin: 10px;
+  background-color: rgb(157, 157, 161);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }

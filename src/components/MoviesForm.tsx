@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Movie } from './MoviesList';
 
+// estado inicial do form vazio
 const emptyMovie: Movie = {
   name: '',
   director: '',
@@ -66,7 +67,7 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
             onChange={handleChange}
           />
         </div>
-        <input type="submit" />
+        <input className="submit" type="submit" />
       </form>
     </div>
   );
