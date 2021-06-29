@@ -1,216 +1,225 @@
 {
-"movies":[
-  {
-    "name": "Alien",
-    "director": "Ridley Scott",
-    "released": "1979",
-    "id": 1
-  },
-  {
-    "name": "Raging Bull",
-    "director": "Martin Scorsese",
-    "released": "1980",
-    "id": 2
-  },
-  {
-    "name": "The Godfather",
-    "director": "Francis Ford Coppola",
-    "released": "1972",
-    "id": 3
-  },
-  {
-    "name": "El Secreto de sus ojos",
-    "director": "Juan José Campanella",
-    "released": "2009",
-    "id": 4
-  },
-  {
-    "name": "Carrie",
-    "director": "Brian De Palma",
-    "released": "1976",
-    "id": 5
-  },
-  {
-    "name": "Carlitos Way",
-    "director": "Brian De Palma",
-    "released": "1993",
-    "id": 6
-  },
-  {
-    "name": "Pans Labirint",
-    "director": "Guillermo Del Toro",
-    "released": "2006",
-    "id": 7
-  },
-  {
-    "name": "The Shining",
-    "director": "Stanley Kubrick",
-    "released": "1980",
-    "id": 8
-  },
-  {
-    "name": "Seven",
-    "director": "David Fincher",
-    "released": "1995",
-    "id": 9
-  },
-  {
-    "name": "Collateral",
-    "director": "Michael Mann",
-    "released": "2004",
-    "id": 10
-  }
-
-],
-
-"actors":[
-  {
-    "name": "Al Pacino",
-    "born": "04/25/1940",
-    "city": "New York/USA",
-    "id": 1
-   },
-  {
-    "name": "Jack Nicholson",
-    "born": "04/22/1937",
-    "city": "New Jersey/USA",
-    "id": 2
-  },
-  {
-    "name": "Michelle Pfeiffer",
-    "born": "04/29/1958",
-    "city": "Santa Ana/USA",
-    "id": 3
-  },
-  {
-    "name": "Meryl Streep",
-    "born": "06/22/1949",
-    "city": "New Jersey/USA",
-    "id": 4
-  },
-  {
-    "name": "Ricardo Darín",
-    "born": "01/16/1957",
-    "city": "Buenos Aires/Argentina",
-    "id": 5
-  },
-  {
-    "name": "Denzel Washington",
-    "born": "12/28/1954",
-    "city": "Mount Vernon/USA",
-    "id": 6
-  },
-  {
-    "name": "Anthony Hopkins",
-    "born": "12/31/1937",
-    "city": "Margam/UK",
-    "id": 7
-  },
-  {
-    "name": "Robert De Niro",
-    "born": "08/17/1943",
-    "city": "New York/USA",
-    "id": 8
-  },
-  {
-    "name": "Joaquin Phoenix",
-    "born": "10/28/1974",
-    "city": "San Juan/Porto Rico",
-    "id": 9
-  },
-  {
-    "name": "Charlize Theron",
-    "born": "08/07/1975",
-    "city": "Benoni/South Africa",
-    "id": 10
-  }
-],
-"lastseen":[
-  {
-    "name": "White Dog",
-    "about": "A lost white german shepard is found by a girl, but she doesn't know the dog was trained to attack black people.",
-    "rating": "4"
-   },
-   {
-    "name": "Biccentennial Man",
-    "about": "Based in Isaac Asimov story. Andrew is a special robot who wants to be like a human.",
-    "rating": "3"
-   },
-   {
-    "name": "Blow Out",
-    "about": "A movie sound expert who witnesses a car accident while recording sounds. After check his tape, he finds out that it was actually a murder.",
-    "rating": "4.5"
-   },
-  {
-  "name": "Narrow Margin",
-  "about": "A district attourney has to protect an homicide witness and hide her in a train while does not know who to trust.",
-  "rating": "3.5"
-  },
-
-  {
-  "name": "Climax",
-  "about": "An intense and not easy experience. The film follows a group of dancers at a party to celebrate the end of rehearsals. With alcohol and LSD gradually the atmosphere of friendship disappearing and fears and insanity emerge.",
-  "rating": "3"
-  },
-
-  {
-  "name": "El Orfanato",
-  "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
-  "rating": "4"
- },
-
- {
-  "name": "Dor y Gloria",
-  "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
-  "rating": "4"
- },
-
- {
-  "name": "Malasaña 32",
-  "about": "Inspired by real events that took place in the 70s, the film portrays a family that goes to Madrid to live a dream and is faced with their worst nightmares in an apartment dominated by a supernatural force.",
-  "rating": "2.5"
- }
-
-],
-  "latinmovies":[
-  {
-    "name": "Official Story",
-    "country": "Argentina",
-    "released": "1985"
-  },
-  {
-    "name": "Whisky",
-    "country": "Uruguay",
-    "released": "2004"
-  },
-  {
-    "name": "Maria, llena de gracia",
-    "country": "Colombia",
-    "released": "2004"
-  },
-  {
-    "name": "Amores Perros",
-    "country": "Mexico",
-    "released": "2000"
-  },
-  {
-    "name": "Contra Corrente",
-    "country": "Peru",
-    "released": "2009"
-  },
-  {
-    "name": "La delgada línea amarilla",
-    "country": "Mexico",
-    "released": "2015"
-  },
-  {
-    "name": "El baño del Papa",
-    "country": "Uruguay",
-    "released": "2007"
-  }
-]
-
+  "movies": [
+    {
+      "name": "Alien",
+      "director": "Ridley Scott",
+      "released": "1979",
+      "id": 1
+    },
+    {
+      "name": "Raging Bull",
+      "director": "Martin Scorsese",
+      "released": "1980",
+      "id": 2
+    },
+    {
+      "name": "The Godfather",
+      "director": "Francis Ford Coppola",
+      "released": "1972",
+      "id": 3
+    },
+    {
+      "name": "El Secreto de sus ojos",
+      "director": "Juan José Campanella",
+      "released": "2009",
+      "id": 4
+    },
+    {
+      "name": "Carrie",
+      "director": "Brian De Palma",
+      "released": "1976",
+      "id": 5
+    },
+    {
+      "name": "Carlitos Way",
+      "director": "Brian De Palma",
+      "released": "1993",
+      "id": 6
+    },
+    {
+      "name": "Pans Labirint",
+      "director": "Guillermo Del Toro",
+      "released": "2006",
+      "id": 7
+    },
+    {
+      "name": "The Shining",
+      "director": "Stanley Kubrick",
+      "released": "1980",
+      "id": 8
+    },
+    {
+      "name": "Seven",
+      "director": "David Fincher",
+      "released": "1995",
+      "id": 9
+    },
+    {
+      "name": "Collateral",
+      "director": "Michael Mann",
+      "released": "2004",
+      "id": 10
+    }
+  ],
+  "actors": [
+    {
+      "name": "Al Pacino",
+      "born": "04/25/1940",
+      "city": "New York/USA",
+      "id": 1
+    },
+    {
+      "name": "Jack Nicholson",
+      "born": "04/22/1937",
+      "city": "New Jersey/USA",
+      "id": 2
+    },
+    {
+      "name": "Michelle Pfeiffer",
+      "born": "04/29/1958",
+      "city": "Santa Ana/USA",
+      "id": 3
+    },
+    {
+      "name": "Meryl Streep",
+      "born": "06/22/1949",
+      "city": "New Jersey/USA",
+      "id": 4
+    },
+    {
+      "name": "Ricardo Darín",
+      "born": "01/16/1957",
+      "city": "Buenos Aires/Argentina",
+      "id": 5
+    },
+    {
+      "name": "Denzel Washington",
+      "born": "12/28/1954",
+      "city": "Mount Vernon/USA",
+      "id": 6
+    },
+    {
+      "name": "Anthony Hopkins",
+      "born": "12/31/1937",
+      "city": "Margam/UK",
+      "id": 7
+    },
+    {
+      "name": "Robert De Niro",
+      "born": "08/17/1943",
+      "city": "New York/USA",
+      "id": 8
+    },
+    {
+      "name": "Joaquin Phoenix",
+      "born": "10/28/1974",
+      "city": "San Juan/Porto Rico",
+      "id": 9
+    },
+    {
+      "name": "Charlize Theron",
+      "born": "08/07/1975",
+      "city": "Benoni/South Africa",
+      "id": 10
+    },
+    {
+      "name": "Cate Blanchet",
+      "born": "05/14/1969",
+      "city": "Ivanhoe/Australia",
+      "id": 11
+    }
+  ],
+  "lastseen": [
+    {
+      "name": "White Dog",
+      "about": "A lost white german shepard is found by a girl, but she doesn't know the dog was trained to attack black people.",
+      "rating": "4",
+      "id": 1
+    },
+    {
+      "name": "Biccentennial Man",
+      "about": "Based in Isaac Asimov story. Andrew is a special robot who wants to be like a human.",
+      "rating": "3",
+      "id": 2
+    },
+    {
+      "name": "Blow Out",
+      "about": "A movie sound expert who witnesses a car accident while recording sounds. After check his tape, he finds out that it was actually a murder.",
+      "rating": "4.5",
+      "id": 3
+    },
+    {
+      "name": "Narrow Margin",
+      "about": "A district attourney has to protect an homicide witness and hide her in a train while does not know who to trust.",
+      "rating": "3.5",
+      "id": 4
+    },
+    {
+      "name": "Climax",
+      "about": "An intense and not easy experience. The film follows a group of dancers at a party to celebrate the end of rehearsals. With alcohol and LSD gradually the atmosphere of friendship disappearing and fears and insanity emerge.",
+      "rating": "3",
+      "id": 5
+    },
+    {
+      "name": "El Orfanato",
+      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "rating": "4",
+      "id": 6
+    },
+    {
+      "name": "Dor y Gloria",
+      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "rating": "4",
+      "id": 7
+    },
+    {
+      "name": "Malasaña 32",
+      "about": "Inspired by real events that took place in the 70s, the film portrays a family that goes to Madrid to live a dream and is faced with their worst nightmares in an apartment dominated by a supernatural force.",
+      "rating": "2.5",
+      "id": 8
+    },
+    {
+      "name": "Flawless",
+      "about": "Laura Quinn is a dedicated executive who works at London's largest diamond company but is frustrated that her professional success is hampered by being a woman. She decides to join Mr. Hobbs, a janitor who feels betrayed after dedicating his life to the company. Together they plan an audacious robbery.",
+      "rating": "3",
+      "id": 9
+    }
+  ],
+  "latinmovies": [
+    {
+      "name": "Official Story",
+      "country": "Argentina",
+      "released": "1985"
+    },
+    {
+      "name": "Whisky",
+      "country": "Uruguay",
+      "released": "2004"
+    },
+    {
+      "name": "Maria, llena de gracia",
+      "country": "Colombia",
+      "released": "2004"
+    },
+    {
+      "name": "Amores Perros",
+      "country": "Mexico",
+      "released": "2000"
+    },
+    {
+      "name": "Contra Corrente",
+      "country": "Peru",
+      "released": "2009"
+    },
+    {
+      "name": "La delgada línea amarilla",
+      "country": "Mexico",
+      "released": "2015"
+    },
+    {
+      "name": "El baño del Papa",
+      "country": "Uruguay",
+      "released": "2007"
+    }
+  ]
 }
-
-
-
