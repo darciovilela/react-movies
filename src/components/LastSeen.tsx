@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-interface LastSeen {
+interface LastSeenMovie {
   name: string;
   about: string;
   rating: string;
 }
 
 export const LastSeen = () => {
-  const [lastseen, setLastSeen] = useState<LastSeen[]>([]);
+  const [lastseen, setLastSeen] = useState<LastSeenMovie[]>([]);
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<LastSeen[]>(
+      const result = await axios.get<LastSeenMovie[]>(
         'http://localhost:4000/lastseen'
       );
       setLastSeen(result.data);

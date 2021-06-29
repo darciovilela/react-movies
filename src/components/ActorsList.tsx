@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ActorsForm } from './ActorsForm';
 
-interface Actor {
+export interface Actor {
   name: string;
   born: string;
   city: string;
@@ -9,6 +10,7 @@ interface Actor {
 
 export const ActorsList = () => {
   const [actors, setActors] = useState<Actor[]>([]);
+  const [date, setDate] = useState(+new Date());
 
   // componentDidMount
   useEffect(() => {
@@ -17,7 +19,7 @@ export const ActorsList = () => {
       setActors(result.data);
     };
     callFetchFunction();
-  }, []);
+  }, [date]);
 
   if (!actors.length) {
     return <div>Loading... (or empty)</div>;
@@ -26,6 +28,7 @@ export const ActorsList = () => {
   return (
     <div>
       <h1>My {actors.length} Favorite Actors:</h1>
+      <ActorsForm setDate={setDate} />
       <table className="center">
         <thead className="Actors-table-head">
           <tr>
