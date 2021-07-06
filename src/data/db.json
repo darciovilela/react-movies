@@ -183,43 +183,62 @@
       "about": "Laura Quinn is a dedicated executive who works at London's largest diamond company but is frustrated that her professional success is hampered by being a woman. She decides to join Mr. Hobbs, a janitor who feels betrayed after dedicating his life to the company. Together they plan an audacious robbery.",
       "rating": "3",
       "id": 9
+    },
+    {
+      "name": "Soul",
+      "about": "A jazz pianist dies and wants to get back for his last chance to be recognized as a talented musician.",
+      "rating": "4",
+      "id": 10
     }
   ],
   "latinmovies": [
     {
       "name": "Official Story",
       "country": "Argentina",
-      "released": "1985"
+      "released": "1985",
+      "id": 1
     },
     {
       "name": "Whisky",
       "country": "Uruguay",
-      "released": "2004"
+      "released": "2004",
+      "id": 2
     },
     {
       "name": "Maria, llena de gracia",
       "country": "Colombia",
-      "released": "2004"
+      "released": "2004",
+      "id": 3
     },
     {
       "name": "Amores Perros",
       "country": "Mexico",
-      "released": "2000"
+      "released": "2000",
+      "id": 4
     },
     {
       "name": "Contra Corrente",
       "country": "Peru",
-      "released": "2009"
+      "released": "2009",
+      "id": 5
     },
     {
       "name": "La delgada línea amarilla",
       "country": "Mexico",
-      "released": "2015"
+      "released": "2015",
+      "id": 6
     },
     {
       "name": "El baño del Papa",
       "country": "Uruguay",
-      "released": "2007"
+      "released": "2007",
+      "id": 7
+    },
+    {
+      "name": "Gigante",
+      "country": "Uruguay",
+      "released": "2009",
+      "id": 8
     }
   ]
 }

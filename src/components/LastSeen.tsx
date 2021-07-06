@@ -32,7 +32,7 @@ export const LastSeen = () => {
       <table className="center">
         <thead className="Lastseen-table-head">
           <tr>
-            <th>Name</th>
+            <th>Movie</th>
             <th>About</th>
             <th>Rating</th>
           </tr>

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Movie } from './MoviesList';
+import { Latin } from './LatinMovies';
 
-// estado inicial do form vazio
-const emptyMovie: Movie = {
+const emptyLatin: Latin = {
   name: '',
-  director: '',
+  country: '',
   released: '',
 };
 
@@ -13,13 +12,13 @@ interface IProps {
   setDate: Function;
 }
 
-export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyMovie);
+export const LatinMoviesForm: React.FC<IProps> = ({ setDate }) => {
+  const [formState, setFormState] = useState(emptyLatin);
 
-  const createMovie = async (movie: Movie) => {
-    const result = await axios.post<Movie>(
-      'http://localhost:4000/movies',
-      movie
+  const createLatin = async (latin: Latin) => {
+    const result = await axios.post<Latin>(
+      'http://localhost:4000/latinmovies',
+      latin
     );
   };
 
@@ -32,9 +31,9 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    createMovie(formState);
+    createLatin(formState);
     setDate(+new Date());
-    setFormState(emptyMovie);
+    setFormState(emptyLatin);
   };
 
   return (
@@ -50,11 +49,11 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
           />
         </div>
         <div>
-          <label>Director:</label>
+          <label>Country:</label>
           <input
             type="text"
-            name="director"
-            value={formState.director}
+            name="country"
+            value={formState.country}
             onChange={handleChange}
           />
         </div>

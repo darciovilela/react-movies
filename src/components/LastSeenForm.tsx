@@ -40,7 +40,7 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label>Movie:</label>
           <input
             type="text"
             name="name"

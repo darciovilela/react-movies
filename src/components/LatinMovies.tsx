@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { LatinMoviesForm } from './LatinMoviesForm';
 
-interface LatinMovie {
+export interface Latin {
   name: string;
   country: string;
   released: string;
 }
 
 export const LatinMovies = () => {
-  const [latinmovies, setLatinMovies] = useState<LatinMovie[]>([]);
+  const [latinmovies, setLatinMovies] = useState<Latin[]>([]);
+  const [date, setDate] = useState(+new Date());
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<LatinMovie[]>(
+      const result = await axios.get<Latin[]>(
         'http://localhost:4000/latinmovies'
       );
       setLatinMovies(result.data);
@@ -27,6 +29,7 @@ export const LatinMovies = () => {
   return (
     <div>
       <h1>{latinmovies.length} Latin Movies that you must see:</h1>
+      <LatinMoviesForm setDate={setDate} />
       <table className="center">
         <thead className="LatinMovies-table-head">
           <tr>
