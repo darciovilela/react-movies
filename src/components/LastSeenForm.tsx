@@ -1,23 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Last } from './LastSeen';
-
-const emptyLast: Last = {
-  name: '',
-  about: '',
-  rating: '',
-};
+import { Last, emptyLast } from './LastSeen';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Last;
 }
 
-export const LastSeenForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyLast);
+export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createLast = async (last: Last) => {
+    // eslint-disable-next-line
     const result = await axios.post<Last>(
       'http://localhost:4000/lastseen',
+      last
+    );
+  };
+
+  const updateLast = async (last: Last) => {
+    const result = await axios.patch<Last>(
+      `http://localhost:4000/lastseen/${last.id}`,
       last
     );
   };
@@ -29,9 +36,13 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createLast(formState);
+    if (formState.id) {
+      await updateLast(formState);
+    } else {
+      await createLast(formState);
+    }
     setDate(+new Date());
     setFormState(emptyLast);
   };

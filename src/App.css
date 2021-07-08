@@ -120,6 +120,18 @@ h1 {
   text-align: center;
 }
 
+.Lastseen-table-body tr {
+  cursor: pointer;
+}
+
+.Lastseen-table-body tr:hover {
+  background-color: #666;
+}
+
+.Lastseen-table-body tr.active {
+  color: yellow;
+}
+
 .LatinMovies-table-head {
   background-color: #cf820f;
   font-size: 18px;
@@ -132,6 +144,18 @@ h1 {
   font-size: 18px;
   color: white;
   text-align: center;
+}
+
+.LatinMovies-table-body tr {
+  cursor: pointer;
+}
+
+.LatinMovies-table-body tr:hover {
+  background-color: #666;
+}
+
+.LatinMovies-table-body tr.active {
+  color: yellow;
 }
 
 table {

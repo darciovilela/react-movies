@@ -4,43 +4,77 @@ import { LastSeenForm } from './LastSeenForm';
 
 // declaracao do que sera passado na interface
 export interface Last {
+  id?: string;
   name: string;
   about: string;
   rating: string;
 }
+// estado inicial do form vazio
+export const emptyLast: Last = {
+  name: '',
+  about: '',
+  rating: '',
+};
 
+// inicio do estado com array vazio
 export const LastSeen = () => {
-  const [lastseen, setLastSeen] = useState<Last[]>([]);
+  const [last, setLast] = useState<Last[]>([]);
   const [date, setDate] = useState(+new Date());
+  const [activeRecord, setActiveRecord] = useState<Last>(emptyLast);
 
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Last[]>('http://localhost:4000/lastseen');
-      setLastSeen(result.data);
+      setLast(result.data);
     };
     callFetchFunction();
-  }, []);
+  }, [date]);
 
-  if (!lastseen.length) {
+  const deleteLast = async (last: Last) => {
+    const result = await axios.delete<Last>(
+      `http://localhost:4000/lastseen/${last.id}`
+    );
+    setDate(+new Date());
+  };
+
+  if (!last.length) {
     return <div>Loading... (or empty)</div>;
   }
 
   return (
     <div>
-      <h1>My {lastseen.length} last seen movies:</h1>
-      <LastSeenForm setDate={setDate} />
+      <h1>My {last.length} last seen movies:</h1>
+      <button onClick={() => setActiveRecord(emptyLast)}>Insert New</button>
+      <LastSeenForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="Lastseen-table-head">
           <tr>
+            <th>E</th>
+            <th>X</th>
             <th>Movie</th>
             <th>About</th>
             <th>Rating</th>
           </tr>
         </thead>
         <tbody className="Lastseen-table-body">
-          {lastseen.map((item) => {
+          {last.map((item) => {
             return (
-              <tr key={item.name}>
+              <tr
+                key={item.id}
+                className={activeRecord === item ? 'active' : ''}
+              >
+                <td>
+                  <button
+                    onClick={() => {
+                      setActiveRecord(item);
+                    }}
+                  >
+                    E
+                  </button>
+                </td>
+                <td>
+                  <button onClick={() => deleteLast(item)}>X</button>
+                </td>
                 <td>{item.name}</td>
                 <td>{item.about}</td>
                 <td>{item.rating}</td>

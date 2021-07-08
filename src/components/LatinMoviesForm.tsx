@@ -1,23 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Latin } from './LatinMovies';
-
-const emptyLatin: Latin = {
-  name: '',
-  country: '',
-  released: '',
-};
+import { Latin, emptyLatin } from './LatinMovies';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Latin;
 }
 
-export const LatinMoviesForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyLatin);
+export const LatinMoviesForm: React.FC<IProps> = ({
+  setDate,
+  activeRecord,
+}) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createLatin = async (latin: Latin) => {
     const result = await axios.post<Latin>(
       'http://localhost:4000/latinmovies',
+      latin
+    );
+  };
+
+  const updateLatin = async (latin: Latin) => {
+    const result = await axios.patch<Latin>(
+      `http://localhost:4000/movies/${latin.id}`,
       latin
     );
   };
@@ -29,9 +38,13 @@ export const LatinMoviesForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createLatin(formState);
+    if (formState.id) {
+      await updateLatin(formState);
+    } else {
+      await createLatin(formState);
+    }
     setDate(+new Date());
     setFormState(emptyLatin);
   };
