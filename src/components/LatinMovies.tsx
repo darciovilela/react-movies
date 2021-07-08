@@ -34,9 +34,7 @@ export const LatinMovies = () => {
   }, [date]);
 
   const deleteLatin = async (latin: Latin) => {
-    const result = await axios.delete<Latin>(
-      `http://localhost:4000/latinmovies/${latin.id}`
-    );
+    await axios.delete<Latin>(`http://localhost:4000/latinmovies/${latin.id}`);
     setDate(+new Date());
   };
 

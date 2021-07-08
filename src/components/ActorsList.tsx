@@ -33,9 +33,7 @@ export const ActorsList = () => {
   }, [date]);
 
   const deleteActor = async (actor: Actor) => {
-    const result = await axios.delete<Actor>(
-      `http://localhost:4000/actors/${actor.id}`
-    );
+    await axios.delete<Actor>(`http://localhost:4000/actors/${actor.id}`);
     setDate(+new Date());
   };
 

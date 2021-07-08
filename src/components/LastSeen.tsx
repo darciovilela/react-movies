@@ -31,9 +31,7 @@ export const LastSeen = () => {
   }, [date]);
 
   const deleteLast = async (last: Last) => {
-    const result = await axios.delete<Last>(
-      `http://localhost:4000/lastseen/${last.id}`
-    );
+    await axios.delete<Last>(`http://localhost:4000/lastseen/${last.id}`);
     setDate(+new Date());
   };
 

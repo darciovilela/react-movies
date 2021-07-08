@@ -33,9 +33,7 @@ export const MoviesList = () => {
   }, [date]);
 
   const deleteMovie = async (movie: Movie) => {
-    const result = await axios.delete<Movie>(
-      `http://localhost:4000/movies/${movie.id}`
-    );
+    await axios.delete<Movie>(`http://localhost:4000/movies/${movie.id}`);
     setDate(+new Date());
   };
 

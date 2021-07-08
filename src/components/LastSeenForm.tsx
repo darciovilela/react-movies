@@ -15,18 +15,11 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createLast = async (last: Last) => {
-    // eslint-disable-next-line
-    const result = await axios.post<Last>(
-      'http://localhost:4000/lastseen',
-      last
-    );
+    await axios.post<Last>('http://localhost:4000/lastseen', last);
   };
 
   const updateLast = async (last: Last) => {
-    const result = await axios.patch<Last>(
-      `http://localhost:4000/lastseen/${last.id}`,
-      last
-    );
+    await axios.patch<Last>(`http://localhost:4000/lastseen/${last.id}`, last);
   };
 
   const handleChange = (event: any) => {

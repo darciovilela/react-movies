@@ -15,17 +15,11 @@ export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createMovie = async (movie: Movie) => {
-    const result = await axios.post<Movie>(
-      'http://localhost:4000/movies',
-      movie
-    );
+    await axios.post<Movie>('http://localhost:4000/movies', movie);
   };
 
   const updateMovie = async (movie: Movie) => {
-    const result = await axios.patch<Movie>(
-      `http://localhost:4000/movies/${movie.id}`,
-      movie
-    );
+    await axios.patch<Movie>(`http://localhost:4000/movies/${movie.id}`, movie);
   };
 
   const handleChange = (event: any) => {

@@ -15,17 +15,11 @@ export const ActorsForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createActor = async (actor: Actor) => {
-    const result = await axios.post<Actor>(
-      'http://localhost:4000/actors',
-      actor
-    );
+    await axios.post<Actor>('http://localhost:4000/actors', actor);
   };
 
   const updateActor = async (actor: Actor) => {
-    const result = await axios.patch<Actor>(
-      `http://localhost:4000/actors/${actor.id}`,
-      actor
-    );
+    await axios.patch<Actor>(`http://localhost:4000/actors/${actor.id}`, actor);
   };
 
   const handleChange = (event: any) => {
