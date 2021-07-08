@@ -10,10 +10,18 @@ export interface Movie {
   released: string;
 }
 
+// estado inicial do form vazio
+export const emptyMovie: Movie = {
+  name: '',
+  director: '',
+  released: '',
+};
+
 // inicio do estado com array vazio
 export const MoviesList = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [date, setDate] = useState(+new Date());
+  const [activeRecord, setActiveRecord] = useState<Movie>(emptyMovie);
 
   // componentDidMount or variable date was changed
   useEffect(() => {
@@ -31,7 +39,8 @@ export const MoviesList = () => {
   return (
     <div>
       <h1>My {movies.length} Favorite Movies:</h1>
-      <MoviesForm setDate={setDate} />
+      <button onClick={() => setActiveRecord(emptyMovie)}>New</button>
+      <MoviesForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="Movie-table-head">
           <tr>
@@ -43,7 +52,13 @@ export const MoviesList = () => {
         <tbody className="Movie-table-body">
           {movies.map((item) => {
             return (
-              <tr key={item.id}>
+              <tr
+                key={item.id}
+                onClick={() => {
+                  setActiveRecord(item);
+                }}
+                className={activeRecord === item ? 'active' : ''}
+              >
                 <td>{item.name}</td>
                 <td>{item.director}</td>
                 <td>{item.released}</td>

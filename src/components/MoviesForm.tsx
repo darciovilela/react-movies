@@ -1,24 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Movie } from './MoviesList';
-
-// estado inicial do form vazio
-const emptyMovie: Movie = {
-  name: '',
-  director: '',
-  released: '',
-};
+import { Movie, emptyMovie } from './MoviesList';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Movie;
 }
 
-export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyMovie);
+export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createMovie = async (movie: Movie) => {
     const result = await axios.post<Movie>(
       'http://localhost:4000/movies',
+      movie
+    );
+  };
+
+  const updateMovie = async (movie: Movie) => {
+    const result = await axios.patch<Movie>(
+      `http://localhost:4000/movies/${movie.id}`,
       movie
     );
   };
@@ -30,9 +35,13 @@ export const MoviesForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createMovie(formState);
+    if (formState.id) {
+      await updateMovie(formState);
+    } else {
+      await createMovie(formState);
+    }
     setDate(+new Date());
     setFormState(emptyMovie);
   };

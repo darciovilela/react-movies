@@ -70,6 +70,18 @@ h1 {
   text-align: center;
 }
 
+.Movie-table-body tr {
+  cursor: pointer;
+}
+
+.Movie-table-body tr:hover {
+  background-color: #666;
+}
+
+.Movie-table-body tr.active {
+  color: yellow;
+}
+
 .Actors-table-head {
   background-color: #714992;
   font-size: 18px;
