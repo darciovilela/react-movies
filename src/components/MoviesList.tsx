@@ -32,6 +32,13 @@ export const MoviesList = () => {
     callFetchFunction();
   }, [date]);
 
+  const deleteMovie = async (movie: Movie) => {
+    const result = await axios.delete<Movie>(
+      `http://localhost:4000/movies/${movie.id}`
+    );
+    setDate(+new Date());
+  };
+
   if (!movies.length) {
     return <div>Loading... (or empty)</div>;
   }
@@ -44,6 +51,8 @@ export const MoviesList = () => {
       <table className="center">
         <thead className="Movie-table-head">
           <tr>
+            <th>E</th>
+            <th>X</th>
             <th>Movie</th>
             <th>Director</th>
             <th>Released</th>
@@ -54,11 +63,20 @@ export const MoviesList = () => {
             return (
               <tr
                 key={item.id}
-                onClick={() => {
-                  setActiveRecord(item);
-                }}
                 className={activeRecord === item ? 'active' : ''}
               >
+                <td>
+                  <button
+                    onClick={() => {
+                      setActiveRecord(item);
+                    }}
+                  >
+                    E
+                  </button>
+                </td>
+                <td>
+                  <button onClick={() => deleteMovie(item)}>X</button>
+                </td>
                 <td>{item.name}</td>
                 <td>{item.director}</td>
                 <td>{item.released}</td>
