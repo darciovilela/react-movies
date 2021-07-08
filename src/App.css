@@ -95,7 +95,17 @@ h1 {
   color: white;
   text-align: center;
 }
+.Actors-table-body tr {
+  cursor: pointer;
+}
 
+.Actors-table-body tr:hover {
+  background-color: #666;
+}
+
+.Actors-table-body tr.active {
+  color: yellow;
+}
 .Lastseen-table-head {
   background-color: #667e0f;
   font-size: 18px;

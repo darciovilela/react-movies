@@ -1,23 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Actor } from './ActorsList';
-
-const emptyActor: Actor = {
-  name: '',
-  born: '',
-  city: '',
-};
+import { Actor, emptyActor } from './ActorsList';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Actor;
 }
 
-export const ActorsForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyActor);
+export const ActorsForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createActor = async (actor: Actor) => {
     const result = await axios.post<Actor>(
       'http://localhost:4000/actors',
+      actor
+    );
+  };
+
+  const updateActor = async (actor: Actor) => {
+    const result = await axios.patch<Actor>(
+      `http://localhost:4000/actors/${actor.id}`,
       actor
     );
   };
@@ -29,9 +35,13 @@ export const ActorsForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createActor(formState);
+    if (formState.id) {
+      await updateActor(formState);
+    } else {
+      await createActor(formState);
+    }
     setDate(+new Date());
     setFormState(emptyActor);
   };

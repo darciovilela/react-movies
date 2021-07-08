@@ -46,7 +46,7 @@ export const MoviesList = () => {
   return (
     <div>
       <h1>My {movies.length} Favorite Movies:</h1>
-      <button onClick={() => setActiveRecord(emptyMovie)}>New</button>
+      <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
       <MoviesForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="Movie-table-head">
