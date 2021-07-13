@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Latin, emptyLatin } from './LatinMovies';
+import { Movie } from '../entities/Movie';
+import { emptyLatin } from './LatinMovies';
 
 interface IProps {
   setDate: Function;
-  activeRecord: Latin;
+  activeRecord: Movie;
 }
 
 export const LatinMoviesForm: React.FC<IProps> = ({
@@ -17,15 +18,15 @@ export const LatinMoviesForm: React.FC<IProps> = ({
     setFormState(activeRecord);
   }, [activeRecord]);
 
-  const createLatin = async (latin: Latin) => {
-    await axios.post<Latin>('http://localhost:4000/movies', {
+  const createLatin = async (latin: Movie) => {
+    await axios.post<Movie>('http://localhost:4000/movies', {
       ...latin,
       latin: true,
     });
   };
 
-  const updateLatin = async (latin: Latin) => {
-    await axios.patch<Latin>(`http://localhost:4000/movies/${latin.id}`, latin);
+  const updateLatin = async (latin: Movie) => {
+    await axios.patch<Movie>(`http://localhost:4000/movies/${latin.id}`, latin);
   };
 
   const handleChange = (event: any) => {

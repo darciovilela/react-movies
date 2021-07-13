@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MoviesForm } from './MoviesForm';
-
-// declaracao do que sera passado na interface
-export interface Movie {
-  id?: string;
-  name: string;
-  director: string;
-  released: string;
-  favorite?: boolean;
-}
+import { Movie } from '../entities/Movie';
 
 // estado inicial do form vazio
 export const emptyMovie: Movie = {

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Last, emptyLast } from './LastSeen';
+import { Movie } from '../entities/Movie';
+import { emptyLast } from './LastSeen';
 
 interface IProps {
   setDate: Function;
-  activeRecord: Last;
+  activeRecord: Movie;
 }
 
 export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
@@ -14,15 +15,15 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     setFormState(activeRecord);
   }, [activeRecord]);
 
-  const createLast = async (last: Last) => {
-    await axios.post<Last>('http://localhost:4000/movies', {
+  const createLast = async (last: Movie) => {
+    await axios.post<Movie>('http://localhost:4000/movies', {
       ...last,
       seen: true,
     });
   };
 
-  const updateLast = async (last: Last) => {
-    await axios.patch<Last>(`http://localhost:4000/movies/${last.id}`, last);
+  const updateLast = async (last: Movie) => {
+    await axios.patch<Movie>(`http://localhost:4000/movies/${last.id}`, last);
   };
 
   const handleChange = (event: any) => {

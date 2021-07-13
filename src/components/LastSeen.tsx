@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { LastSeenForm } from './LastSeenForm';
+import { Movie } from '../entities/Movie';
 
-// declaracao do que sera passado na interface
-export interface Last {
-  id?: string;
-  name: string;
-  about: string;
-  rating: string;
-}
 // estado inicial do form vazio
-export const emptyLast: Last = {
+export const emptyLast: Movie = {
   name: '',
   about: '',
   rating: '',
@@ -18,13 +12,13 @@ export const emptyLast: Last = {
 
 // inicio do estado com array vazio
 export const LastSeen = () => {
-  const [last, setLast] = useState<Last[]>([]);
+  const [last, setLast] = useState<Movie[]>([]);
   const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Last>(emptyLast);
+  const [activeRecord, setActiveRecord] = useState<Movie>(emptyLast);
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Last[]>(
+      const result = await axios.get<Movie[]>(
         'http://localhost:4000/movies?seen=true'
       );
       setLast(result.data);
@@ -32,8 +26,8 @@ export const LastSeen = () => {
     callFetchFunction();
   }, [date]);
 
-  const deleteLast = async (last: Last) => {
-    await axios.delete<Last>(`http://localhost:4000/movies/${last.id}`);
+  const deleteLast = async (last: Movie) => {
+    await axios.delete<Movie>(`http://localhost:4000/movies/${last.id}`);
     setDate(+new Date());
   };
 

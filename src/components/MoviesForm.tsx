@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Movie, emptyMovie } from './MoviesList';
+import { Movie } from '../entities/Movie';
+import { emptyMovie } from './MoviesList';
 
 interface IProps {
   setDate: Function;
