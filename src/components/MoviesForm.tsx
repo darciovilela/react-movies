@@ -15,7 +15,10 @@ export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createMovie = async (movie: Movie) => {
-    await axios.post<Movie>('http://localhost:4000/movies', movie);
+    await axios.post<Movie>('http://localhost:4000/movies', {
+      ...movie,
+      favorite: true,
+    });
   };
 
   const updateMovie = async (movie: Movie) => {

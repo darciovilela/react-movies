@@ -8,6 +8,7 @@ export interface Movie {
   name: string;
   director: string;
   released: string;
+  favorite?: boolean;
 }
 
 // estado inicial do form vazio
@@ -26,7 +27,9 @@ export const MoviesList = () => {
   // componentDidMount or variable date was changed
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Movie[]>('http://localhost:4000/movies');
+      const result = await axios.get<Movie[]>(
+        'http://localhost:4000/movies?favorite=true'
+      );
       setMovies(result.data);
     };
     callFetchFunction();

@@ -1,64 +1,200 @@
 {
   "movies": [
     {
-      "name": "Alien Edited",
+      "name": "Alien",
       "director": "Ridley Scott",
       "released": "1979",
+      "favorite": true,
       "id": 1
     },
     {
       "name": "Raging Bull",
       "director": "Martin Scorsese",
       "released": "1980",
+      "favorite": true,
       "id": 2
     },
     {
       "name": "The Godfather",
       "director": "Francis Ford Coppola",
       "released": "1972",
+      "favorite": true,
       "id": 3
     },
     {
       "name": "El Secreto de sus ojos",
       "director": "Juan José Campanella",
       "released": "2009",
+      "favorite": true,
       "id": 4
     },
     {
       "name": "Carrie",
       "director": "Brian De Palma",
       "released": "1976",
+      "favorite": true,
       "id": 5
     },
     {
       "name": "Carlitos Way",
       "director": "Brian De Palma",
       "released": "1993",
+      "favorite": true,
       "id": 6
     },
     {
       "name": "Pans Labirint",
       "director": "Guillermo Del Toro",
       "released": "2006",
+      "favorite": true,
       "id": 7
     },
     {
       "name": "The Shining",
       "director": "Stanley Kubrick",
       "released": "1980",
+      "favorite": true,
       "id": 8
     },
     {
       "name": "Seven",
       "director": "David Fincher",
       "released": "1995",
+      "favorite": true,
       "id": 9
     },
     {
       "name": "Collateral",
       "director": "Michael Mann",
       "released": "2004",
+      "favorite": true,
       "id": 10
+    },
+    {
+      "name": "White Dog",
+      "about": "A lost white german shepard is found by a girl, but she doesn't know the dog was trained to attack black people.",
+      "seen": true,
+      "rating": "4",
+      "id": 11
+    },
+    {
+      "name": "Biccentennial Man",
+      "about": "Based in Isaac Asimov story. Andrew is a special robot who wants to be like a human.",
+      "seen": true,
+      "rating": "3",
+      "id": 12
+    },
+    {
+      "name": "Blow Out",
+      "about": "A movie sound expert who witnesses a car accident while recording sounds. After check his tape, he finds out that it was actually a murder.",
+      "seen": true,
+      "rating": "4.5",
+      "id": 13
+    },
+    {
+      "name": "Narrow Margin",
+      "about": "A district attourney has to protect an homicide witness and hide her in a train while does not know who to trust.",
+      "seen": true,
+      "rating": "3.5",
+      "id": 14
+    },
+    {
+      "name": "Climax",
+      "about": "An intense and not easy experience. The film follows a group of dancers at a party to celebrate the end of rehearsals. With alcohol and LSD gradually the atmosphere of friendship disappearing and fears and insanity emerge.",
+      "seen": true,
+      "rating": "3",
+      "id": 15
+    },
+    {
+      "name": "El Orfanato",
+      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "seen": true,
+      "rating": "4",
+      "id": 16
+    },
+    {
+      "name": "Dor y Gloria",
+      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "seen": true,
+      "rating": "4",
+      "id": 17
+    },
+    {
+      "name": "Malasaña 32",
+      "about": "Inspired by real events that took place in the 70s, the film portrays a family that goes to Madrid to live a dream and is faced with their worst nightmares in an apartment dominated by a supernatural force.",
+      "seen": true,
+      "rating": "2.5",
+      "id": 18
+    },
+    {
+      "name": "Flawless",
+      "about": "Laura Quinn is a dedicated executive who works at London's largest diamond company but is frustrated that her professional success is hampered by being a woman. She decides to join Mr. Hobbs, a janitor who feels betrayed after dedicating his life to the company. Together they plan an audacious robbery.",
+      "seen": true,
+      "rating": "3",
+      "id": 19
+    },
+    {
+      "name": "Soul",
+      "about": "A jazz pianist dies and wants to get back for his last chance to be recognized as a talented musician.",
+      "seen": true,
+      "rating": "4",
+      "id": 20
+    },
+    {
+      "latin": true,
+      "name": "Official Story",
+      "country": "Argentina",
+      "released": "1985",
+      "id": 21
+    },
+    {
+      "latin": true,
+      "name": "Whisky",
+      "country": "Uruguay",
+      "released": "2004",
+      "id": 22
+    },
+    {
+      "latin": true,
+      "name": "Maria, llena de gracia",
+      "country": "Colombia",
+      "released": "2004",
+      "id": 23
+    },
+    {
+      "latin": true,
+      "name": "Amores Perros",
+      "country": "Mexico",
+      "released": "2000",
+      "id": 24
+    },
+    {
+      "latin": true,
+      "name": "Contra Corrente",
+      "country": "Peru",
+      "released": "2009",
+      "id": 25
+    },
+    {
+      "latin": true,
+      "name": "La delgada línea amarilla",
+      "country": "Mexico",
+      "released": "2015",
+      "id": 26
+    },
+    {
+      "latin": true,
+      "name": "El baño del Papa",
+      "country": "Uruguay",
+      "released": "2007",
+      "id": 27
+    },
+    {
+      "latin": true,
+      "name": "Gigante",
+      "country": "Uruguay",
+      "released": "2009",
+      "id": 28
     }
   ],
   "actors": [
@@ -127,118 +263,6 @@
       "born": "05/14/1969",
       "city": "Ivanhoe/Australia",
       "id": 11
-    }
-  ],
-  "lastseen": [
-    {
-      "name": "White Dog",
-      "about": "A lost white german shepard is found by a girl, but she doesn't know the dog was trained to attack black people.",
-      "rating": "4",
-      "id": 1
-    },
-    {
-      "name": "Biccentennial Man",
-      "about": "Based in Isaac Asimov story. Andrew is a special robot who wants to be like a human.",
-      "rating": "3",
-      "id": 2
-    },
-    {
-      "name": "Blow Out",
-      "about": "A movie sound expert who witnesses a car accident while recording sounds. After check his tape, he finds out that it was actually a murder.",
-      "rating": "4.5",
-      "id": 3
-    },
-    {
-      "name": "Narrow Margin",
-      "about": "A district attourney has to protect an homicide witness and hide her in a train while does not know who to trust.",
-      "rating": "3.5",
-      "id": 4
-    },
-    {
-      "name": "Climax",
-      "about": "An intense and not easy experience. The film follows a group of dancers at a party to celebrate the end of rehearsals. With alcohol and LSD gradually the atmosphere of friendship disappearing and fears and insanity emerge.",
-      "rating": "3",
-      "id": 5
-    },
-    {
-      "name": "El Orfanato",
-      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
-      "rating": "4",
-      "id": 6
-    },
-    {
-      "name": "Dor y Gloria",
-      "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
-      "rating": "4",
-      "id": 7
-    },
-    {
-      "name": "Malasaña 32",
-      "about": "Inspired by real events that took place in the 70s, the film portrays a family that goes to Madrid to live a dream and is faced with their worst nightmares in an apartment dominated by a supernatural force.",
-      "rating": "2.5",
-      "id": 8
-    },
-    {
-      "name": "Flawless",
-      "about": "Laura Quinn is a dedicated executive who works at London's largest diamond company but is frustrated that her professional success is hampered by being a woman. She decides to join Mr. Hobbs, a janitor who feels betrayed after dedicating his life to the company. Together they plan an audacious robbery.",
-      "rating": "3",
-      "id": 9
-    },
-    {
-      "name": "Soul",
-      "about": "A jazz pianist dies and wants to get back for his last chance to be recognized as a talented musician.",
-      "rating": "4",
-      "id": 10
-    }
-  ],
-  "latinmovies": [
-    {
-      "name": "Official Story",
-      "country": "Argentina",
-      "released": "1985",
-      "id": 1
-    },
-    {
-      "name": "Whisky",
-      "country": "Uruguay",
-      "released": "2004",
-      "id": 2
-    },
-    {
-      "name": "Maria, llena de gracia",
-      "country": "Colombia",
-      "released": "2004",
-      "id": 3
-    },
-    {
-      "name": "Amores Perros",
-      "country": "Mexico",
-      "released": "2000",
-      "id": 4
-    },
-    {
-      "name": "Contra Corrente",
-      "country": "Peru",
-      "released": "2009",
-      "id": 5
-    },
-    {
-      "name": "La delgada línea amarilla",
-      "country": "Mexico",
-      "released": "2015",
-      "id": 6
-    },
-    {
-      "name": "El baño del Papa",
-      "country": "Uruguay",
-      "released": "2007",
-      "id": 7
-    },
-    {
-      "name": "Gigante",
-      "country": "Uruguay",
-      "released": "2009",
-      "id": 8
     }
   ]
 }

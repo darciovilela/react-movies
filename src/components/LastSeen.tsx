@@ -24,14 +24,16 @@ export const LastSeen = () => {
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Last[]>('http://localhost:4000/lastseen');
+      const result = await axios.get<Last[]>(
+        'http://localhost:4000/movies?seen=true'
+      );
       setLast(result.data);
     };
     callFetchFunction();
   }, [date]);
 
   const deleteLast = async (last: Last) => {
-    await axios.delete<Last>(`http://localhost:4000/lastseen/${last.id}`);
+    await axios.delete<Last>(`http://localhost:4000/movies/${last.id}`);
     setDate(+new Date());
   };
 

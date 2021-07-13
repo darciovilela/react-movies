@@ -26,7 +26,7 @@ export const LatinMovies = () => {
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Latin[]>(
-        'http://localhost:4000/latinmovies'
+        'http://localhost:4000/movies?latin=true'
       );
       setLatin(result.data);
     };
@@ -34,7 +34,7 @@ export const LatinMovies = () => {
   }, [date]);
 
   const deleteLatin = async (latin: Latin) => {
-    await axios.delete<Latin>(`http://localhost:4000/latinmovies/${latin.id}`);
+    await axios.delete<Latin>(`http://localhost:4000/movies/${latin.id}`);
     setDate(+new Date());
   };
 

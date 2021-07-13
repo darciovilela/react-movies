@@ -18,7 +18,10 @@ export const LatinMoviesForm: React.FC<IProps> = ({
   }, [activeRecord]);
 
   const createLatin = async (latin: Latin) => {
-    await axios.post<Latin>('http://localhost:4000/latinmovies', latin);
+    await axios.post<Latin>('http://localhost:4000/movies', {
+      ...latin,
+      latin: true,
+    });
   };
 
   const updateLatin = async (latin: Latin) => {
