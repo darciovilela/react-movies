@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { MoviesForm } from './MoviesForm';
 import { Movie } from '../entities/Movie';
+import { useList } from '../hooks/useList';
 
 // estado inicial do form vazio
 export const emptyMovie: Movie = {
@@ -12,25 +11,8 @@ export const emptyMovie: Movie = {
 
 // inicio do estado com array vazio
 export const MoviesList = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Movie>(emptyMovie);
-
-  // componentDidMount or variable date was changed
-  useEffect(() => {
-    const callFetchFunction = async () => {
-      const result = await axios.get<Movie[]>(
-        'http://localhost:4000/movies?favorite=true'
-      );
-      setMovies(result.data);
-    };
-    callFetchFunction();
-  }, [date]);
-
-  const deleteMovie = async (movie: Movie) => {
-    await axios.delete<Movie>(`http://localhost:4000/movies/${movie.id}`);
-    setDate(+new Date());
-  };
+  const { movies, activeRecord, setActiveRecord, setDate, deleteMovie } =
+    useList(emptyMovie, 'favorite=true');
 
   if (!movies.length) {
     return <div>Loading... (or empty)</div>;
