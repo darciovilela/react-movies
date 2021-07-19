@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Movie } from '../entities/Movie';
-import { emptyLatin } from './LatinMovies';
+import { emptyMovie } from './LatinMovies';
 
 interface IProps {
   setDate: Function;
@@ -44,7 +44,7 @@ export const LatinMoviesForm: React.FC<IProps> = ({
       await createLatin(formState);
     }
     setDate(+new Date());
-    setFormState(emptyLatin);
+    setFormState(emptyMovie);
   };
 
   return (
