@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Movie } from '../entities/Movie';
 import { emptyMovie } from './MoviesList';
+import { useForm } from '../hooks/useForm';
 
 interface IProps {
   setDate: Function;
@@ -9,40 +8,12 @@ interface IProps {
 }
 
 export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const [formState, setFormState] = useState(activeRecord);
-
-  useEffect(() => {
-    setFormState(activeRecord);
-  }, [activeRecord]);
-
-  const createMovie = async (movie: Movie) => {
-    await axios.post<Movie>('http://localhost:4000/movies', {
-      ...movie,
-      favorite: true,
-    });
-  };
-
-  const updateMovie = async (movie: Movie) => {
-    await axios.patch<Movie>(`http://localhost:4000/movies/${movie.id}`, movie);
-  };
-
-  const handleChange = (event: any) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    if (formState.id) {
-      await updateMovie(formState);
-    } else {
-      await createMovie(formState);
-    }
-    setDate(+new Date());
-    setFormState(emptyMovie);
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    setDate,
+    activeRecord,
+    emptyMovie,
+    { favorite: true }
+  );
 
   return (
     <div>
