@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { LastSeenForm } from './LastSeenForm';
 import { Movie } from '../entities/Movie';
+import { useList } from '../hooks/useList';
 
 // estado inicial do form vazio
-export const emptyLast: Movie = {
+export const emptyMovie: Movie = {
   name: '',
   about: '',
   rating: '',
@@ -12,33 +11,17 @@ export const emptyLast: Movie = {
 
 // inicio do estado com array vazio
 export const LastSeen = () => {
-  const [last, setLast] = useState<Movie[]>([]);
-  const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Movie>(emptyLast);
+  const { movies, activeRecord, setActiveRecord, setDate, deleteMovie } =
+    useList(emptyMovie, 'seen=true');
 
-  useEffect(() => {
-    const callFetchFunction = async () => {
-      const result = await axios.get<Movie[]>(
-        'http://localhost:4000/movies?seen=true'
-      );
-      setLast(result.data);
-    };
-    callFetchFunction();
-  }, [date]);
-
-  const deleteLast = async (last: Movie) => {
-    await axios.delete<Movie>(`http://localhost:4000/movies/${last.id}`);
-    setDate(+new Date());
-  };
-
-  if (!last.length) {
+  if (!movies.length) {
     return <div>Loading... (or empty)</div>;
   }
 
   return (
     <div>
-      <h1>My {last.length} last seen movies:</h1>
-      <button onClick={() => setActiveRecord(emptyLast)}>Insert New</button>
+      <h1>My {movies.length} last seen movies:</h1>
+      <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
       <LastSeenForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="Lastseen-table-head">
@@ -51,7 +34,7 @@ export const LastSeen = () => {
           </tr>
         </thead>
         <tbody className="Lastseen-table-body">
-          {last.map((item) => {
+          {movies.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -67,7 +50,7 @@ export const LastSeen = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteLast(item)}>X</button>
+                  <button onClick={() => deleteMovie(item)}>X</button>
                 </td>
                 <td>{item.name}</td>
                 <td>{item.about}</td>

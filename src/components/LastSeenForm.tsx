@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Movie } from '../entities/Movie';
-import { emptyLast } from './LastSeen';
+import { emptyMovie } from './LastSeen';
+import { useForm } from '../hooks/useForm';
 
 interface IProps {
   setDate: Function;
@@ -9,40 +8,12 @@ interface IProps {
 }
 
 export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const [formState, setFormState] = useState(activeRecord);
-
-  useEffect(() => {
-    setFormState(activeRecord);
-  }, [activeRecord]);
-
-  const createLast = async (last: Movie) => {
-    await axios.post<Movie>('http://localhost:4000/movies', {
-      ...last,
-      seen: true,
-    });
-  };
-
-  const updateLast = async (last: Movie) => {
-    await axios.patch<Movie>(`http://localhost:4000/movies/${last.id}`, last);
-  };
-
-  const handleChange = (event: any) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    if (formState.id) {
-      await updateLast(formState);
-    } else {
-      await createLast(formState);
-    }
-    setDate(+new Date());
-    setFormState(emptyLast);
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    setDate,
+    activeRecord,
+    emptyMovie,
+    { seen: true }
+  );
 
   return (
     <div>
