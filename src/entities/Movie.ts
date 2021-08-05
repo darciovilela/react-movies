@@ -14,3 +14,16 @@ export interface Movie extends MovieFlags {
   released?: string;
   rating?: string;
 }
+
+// estado inicial do form vazio
+export const emptyMovie: Movie = {
+  name: '',
+  about: '',
+  country: '',
+  director: '',
+  rating: '',
+  released: '',
+  favorite: false,
+  latin: false,
+  seen: false,
+};

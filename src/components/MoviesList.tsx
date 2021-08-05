@@ -1,16 +1,6 @@
 import { MoviesForm } from './MoviesForm';
-import { Movie } from '../entities/Movie';
+import { Movie, emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
-
-// estado inicial do form vazio
-export const emptyMovie: Movie = {
-  name: '',
-  director: '',
-  released: '',
-  favorite: true,
-  latin: false,
-  seen: false,
-};
 
 // inicio do estado com array vazio
 export const MoviesList = () => {

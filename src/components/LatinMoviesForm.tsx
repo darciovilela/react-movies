@@ -1,5 +1,5 @@
 import { Movie } from '../entities/Movie';
-import { emptyMovie } from './LatinMovies';
+import { emptyMovie } from '../entities/Movie';
 import { useForm } from '../hooks/useForm';
 
 interface IProps {

@@ -1,16 +1,6 @@
 import { LastSeenForm } from './LastSeenForm';
-import { Movie } from '../entities/Movie';
+import { Movie, emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
-
-// estado inicial do form vazio
-export const emptyMovie: Movie = {
-  name: '',
-  about: '',
-  rating: '',
-  favorite: false,
-  latin: false,
-  seen: true,
-};
 
 // inicio do estado com array vazio
 export const LastSeen = () => {
