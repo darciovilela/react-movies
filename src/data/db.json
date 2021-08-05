@@ -73,6 +73,7 @@
     {
       "name": "White Dog",
       "about": "A lost white german shepard is found by a girl, but she doesn't know the dog was trained to attack black people.",
+      "favorite": false,
       "seen": true,
       "rating": "4",
       "id": 11
@@ -80,6 +81,7 @@
     {
       "name": "Biccentennial Man",
       "about": "Based in Isaac Asimov story. Andrew is a special robot who wants to be like a human.",
+      "favorite": false,
       "seen": true,
       "rating": "3",
       "id": 12
@@ -87,6 +89,7 @@
     {
       "name": "Blow Out",
       "about": "A movie sound expert who witnesses a car accident while recording sounds. After check his tape, he finds out that it was actually a murder.",
+      "favorite": false,
       "seen": true,
       "rating": "4.5",
       "id": 13
@@ -94,6 +97,7 @@
     {
       "name": "Narrow Margin",
       "about": "A district attourney has to protect an homicide witness and hide her in a train while does not know who to trust.",
+      "favorite": false,
       "seen": true,
       "rating": "3.5",
       "id": 14
@@ -101,6 +105,7 @@
     {
       "name": "Climax",
       "about": "An intense and not easy experience. The film follows a group of dancers at a party to celebrate the end of rehearsals. With alcohol and LSD gradually the atmosphere of friendship disappearing and fears and insanity emerge.",
+      "favorite": false,
       "seen": true,
       "rating": "3",
       "id": 15
@@ -108,6 +113,7 @@
     {
       "name": "El Orfanato",
       "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "favorite": false,
       "seen": true,
       "rating": "4",
       "id": 16
@@ -115,6 +121,7 @@
     {
       "name": "Dor y Gloria",
       "about": "A young girl named Laura is adopted into an orphanage and 30 years later returns with her husband and son planning to reopen for disabled children. The child claims to talk with other boy, an imaginary friend.",
+      "favorite": false,
       "seen": true,
       "rating": "4",
       "id": 17
@@ -122,6 +129,7 @@
     {
       "name": "Malasaña 32",
       "about": "Inspired by real events that took place in the 70s, the film portrays a family that goes to Madrid to live a dream and is faced with their worst nightmares in an apartment dominated by a supernatural force.",
+      "favorite": false,
       "seen": true,
       "rating": "2.5",
       "id": 18
@@ -129,6 +137,7 @@
     {
       "name": "Flawless",
       "about": "Laura Quinn is a dedicated executive who works at London's largest diamond company but is frustrated that her professional success is hampered by being a woman. She decides to join Mr. Hobbs, a janitor who feels betrayed after dedicating his life to the company. Together they plan an audacious robbery.",
+      "favorite": false,
       "seen": true,
       "rating": "3",
       "id": 19
@@ -136,6 +145,7 @@
     {
       "name": "Soul",
       "about": "A jazz pianist dies and wants to get back for his last chance to be recognized as a talented musician.",
+      "favorite": false,
       "seen": true,
       "rating": "4",
       "id": 20
@@ -145,6 +155,7 @@
       "name": "Official Story",
       "country": "Argentina",
       "released": "1985",
+      "favorite": false,
       "id": 21
     },
     {
@@ -152,6 +163,7 @@
       "name": "Whisky",
       "country": "Uruguay",
       "released": "2004",
+      "favorite": false,
       "id": 22
     },
     {
@@ -159,6 +171,7 @@
       "name": "Maria, llena de gracia",
       "country": "Colombia",
       "released": "2004",
+      "favorite": false,
       "id": 23
     },
     {
@@ -166,6 +179,7 @@
       "name": "Amores Perros",
       "country": "Mexico",
       "released": "2000",
+      "favorite": false,
       "id": 24
     },
     {
@@ -173,6 +187,7 @@
       "name": "Contra Corrente",
       "country": "Peru",
       "released": "2009",
+      "favorite": false,
       "id": 25
     },
     {
@@ -180,6 +195,7 @@
       "name": "La delgada línea amarilla",
       "country": "Mexico",
       "released": "2015",
+      "favorite": false,
       "id": 26
     },
     {
@@ -187,6 +203,7 @@
       "name": "El baño del Papa",
       "country": "Uruguay",
       "released": "2007",
+      "favorite": false,
       "id": 27
     },
     {
@@ -194,6 +211,7 @@
       "name": "Gigante",
       "country": "Uruguay",
       "released": "2009",
+      "favorite": false,
       "id": 28
     }
   ],
