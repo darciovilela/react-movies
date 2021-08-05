@@ -11,6 +11,7 @@ export const Header = (props: IProps) => {
   const menuItem = (pageName: string) => {
     return (
       <li
+        key={pageName}
         onClick={() => props.setPage(pageName)}
         className={props.page === pageName ? 'active' : ''}
       >
