@@ -46,6 +46,10 @@ span {
   cursor: pointer;
 }
 
+.App-header ul li.active {
+  background: darkmagenta;
+}
+
 .App-header ul li:hover {
   color: rgb(211, 177, 136);
 }
