@@ -1,13 +1,16 @@
 // declaracao do que sera passado na interface
-export interface Movie {
+export interface MovieFlags {
+  favorite: boolean;
+  latin: boolean;
+  seen: boolean;
+}
+
+export interface Movie extends MovieFlags {
   id?: string;
   name: string;
   country?: string;
   about?: string;
   director?: string;
   released?: string;
-  favorite?: boolean;
-  latin?: boolean;
   rating?: string;
-  seen?: boolean;
 }

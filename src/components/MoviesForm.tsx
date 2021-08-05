@@ -12,7 +12,7 @@ export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     setDate,
     activeRecord,
     emptyMovie,
-    { favorite: true }
+    { favorite: true, latin: false, seen: false }
   );
 
   return (

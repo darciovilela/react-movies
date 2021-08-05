@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Movie } from '../entities/Movie';
+import { Movie, MovieFlags } from '../entities/Movie';
 
 export const useForm = (
   setDate: Function,
   activeRecord: Movie,
   emptyMovie: Movie,
-  formParams: {}
+  formParams: MovieFlags
 ) => {
   const [formState, setFormState] = useState(activeRecord);
 

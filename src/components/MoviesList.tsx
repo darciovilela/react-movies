@@ -7,6 +7,9 @@ export const emptyMovie: Movie = {
   name: '',
   director: '',
   released: '',
+  favorite: true,
+  latin: false,
+  seen: false,
 };
 
 // inicio do estado com array vazio

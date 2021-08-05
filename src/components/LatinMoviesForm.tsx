@@ -15,7 +15,7 @@ export const LatinMoviesForm: React.FC<IProps> = ({
     setDate,
     activeRecord,
     emptyMovie,
-    { latin: true }
+    { favorite: false, latin: true, seen: false }
   );
 
   return (

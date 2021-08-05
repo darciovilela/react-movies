@@ -12,7 +12,7 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     setDate,
     activeRecord,
     emptyMovie,
-    { seen: true }
+    { favorite: false, latin: false, seen: true }
   );
 
   return (
