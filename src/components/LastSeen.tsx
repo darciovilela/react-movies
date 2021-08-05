@@ -1,5 +1,5 @@
 import { LastSeenForm } from './LastSeenForm';
-import { Movie, emptyMovie } from '../entities/Movie';
+import { emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
