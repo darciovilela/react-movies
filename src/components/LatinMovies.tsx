@@ -29,7 +29,7 @@ export const LatinMovies = () => {
             <th>E</th>
             <th>X</th>
             <th>Movie</th>
-            <th>About</th>
+            <th>Country</th>
             <th>Rating</th>
           </tr>
         </thead>
