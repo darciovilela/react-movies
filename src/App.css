@@ -217,3 +217,13 @@ label {
   border-radius: 5px;
   cursor: pointer;
 }
+
+div.error {
+  text-align: left;
+  background: lightcoral;
+  color: darkred;
+  font-size: 16px;
+  padding: 16px;
+  margin: 16px;
+  border: 2px solid darkred;
+}

@@ -6,14 +6,24 @@ export const useList = (emptyMovie: Movie, urlParams: string) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [date, setDate] = useState(+new Date());
   const [activeRecord, setActiveRecord] = useState<Movie>(emptyMovie);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error>();
 
   // componentDidMount or variable date was changed
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Movie[]>(
-        `http://localhost:4000/movies?${urlParams}`
-      );
-      setMovies(result.data);
+      try {
+        setLoading(true);
+        setError(undefined);
+        const result = await axios.get<Movie[]>(
+          `http://localhost:4000/movies?${urlParams}`
+        );
+        setMovies(result.data);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
     };
     callFetchFunction();
   }, [date, urlParams]);
@@ -23,5 +33,13 @@ export const useList = (emptyMovie: Movie, urlParams: string) => {
     setDate(+new Date());
   };
 
-  return { movies, setDate, activeRecord, setActiveRecord, deleteMovie };
+  return {
+    movies,
+    setDate,
+    activeRecord,
+    setActiveRecord,
+    deleteMovie,
+    loading,
+    error,
+  };
 };
