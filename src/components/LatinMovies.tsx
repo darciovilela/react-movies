@@ -4,11 +4,26 @@ import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
 export const LatinMovies = () => {
-  const { movies, activeRecord, setActiveRecord, setDate, deleteMovie } =
-    useList(emptyMovie, 'latin=true');
+  const {
+    movies,
+    activeRecord,
+    setActiveRecord,
+    setDate,
+    deleteMovie,
+    loading,
+    error,
+  } = useList(emptyMovie, 'latin=true');
 
-  if (!movies.length) {
-    return <div>Loading... (or empty)</div>;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <pre>{JSON.stringify(error, null, 2)}</pre>
+      </div>
+    );
   }
 
   return (
