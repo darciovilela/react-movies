@@ -9,6 +9,7 @@ export const useForm = (
   formParams: MovieFlags
 ) => {
   const [formState, setFormState] = useState(activeRecord);
+  const [error, setError] = useState<Error>();
 
   useEffect(() => {
     setFormState(activeRecord);
@@ -34,14 +35,19 @@ export const useForm = (
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    if (formState.id) {
-      await updateMovie(formState);
-    } else {
-      await createMovie(formState);
+    try {
+      setError(undefined);
+      if (formState.id) {
+        await updateMovie(formState);
+      } else {
+        await createMovie(formState);
+      }
+      setDate(+new Date());
+      setFormState(emptyMovie);
+    } catch (e) {
+      setError(e);
     }
-    setDate(+new Date());
-    setFormState(emptyMovie);
   };
 
-  return { formState, handleChange, handleSubmit };
+  return { formState, handleChange, handleSubmit, error };
 };
