@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const { formState, handleChange, handleSubmit } = useForm(
+  const { formState, handleChange, handleSubmit, error } = useForm(
     setDate,
     activeRecord,
     emptyMovie,
@@ -17,6 +17,11 @@ export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
 
   return (
     <div>
+      {error && (
+        <div className="error">
+          <pre>{JSON.stringify(error, null, 2)}</pre>
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Movie:</label>
