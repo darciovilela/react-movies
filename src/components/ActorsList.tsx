@@ -9,7 +9,7 @@ export const ActorsList = () => {
     records,
     activeRecord,
     setActiveRecord,
-    setDate,
+    callFetchFunction,
     deleteRecord,
     loading,
     error,
@@ -25,7 +25,10 @@ export const ActorsList = () => {
     <div>
       <h1>My {records.length} Favorite Actors:</h1>
       <button onClick={() => setActiveRecord(emptyActor)}>Insert New</button>
-      <ActorsForm setDate={setDate} activeRecord={activeRecord} />
+      <ActorsForm
+        callFetchFunction={callFetchFunction}
+        activeRecord={activeRecord}
+      />
       <table className="center">
         <thead className="Actors-table-head">
           <tr>

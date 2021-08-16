@@ -9,7 +9,7 @@ export const MoviesList = () => {
     records,
     activeRecord,
     setActiveRecord,
-    setDate,
+    callFetchFunction,
     deleteRecord,
     loading,
     error,
@@ -25,7 +25,10 @@ export const MoviesList = () => {
     <div>
       <h1>My {records.length} Favorite Movies:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
-      <MoviesForm setDate={setDate} activeRecord={activeRecord} />
+      <MoviesForm
+        callFetchFunction={callFetchFunction}
+        activeRecord={activeRecord}
+      />
       <table className="center">
         <thead className="Movie-table-head">
           <tr>

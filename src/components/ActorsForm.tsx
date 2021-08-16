@@ -3,11 +3,14 @@ import axios from 'axios';
 import { Actor, emptyActor } from '../entities/Actor';
 
 interface IProps {
-  setDate: Function;
+  callFetchFunction: Function;
   activeRecord: Actor;
 }
 
-export const ActorsForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+export const ActorsForm: React.FC<IProps> = ({
+  callFetchFunction,
+  activeRecord,
+}) => {
   const [formState, setFormState] = useState(activeRecord);
 
   useEffect(() => {
@@ -36,7 +39,7 @@ export const ActorsForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     } else {
       await createActor(formState);
     }
-    setDate(+new Date());
+    //setDate(+new Date());
     setFormState(emptyActor);
   };
 

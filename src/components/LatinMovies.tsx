@@ -9,7 +9,7 @@ export const LatinMovies = () => {
     records,
     activeRecord,
     setActiveRecord,
-    setDate,
+    callFetchFunction,
     deleteRecord,
     loading,
     error,
@@ -25,7 +25,10 @@ export const LatinMovies = () => {
     <div>
       <h1>{records.length} Latin Movies that you must see:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
-      <LatinMoviesForm setDate={setDate} activeRecord={activeRecord} />
+      <LatinMoviesForm
+        callFetchFunction={callFetchFunction}
+        activeRecord={activeRecord}
+      />
       <table className="center">
         <thead className="LatinMovies-table-head">
           <tr>

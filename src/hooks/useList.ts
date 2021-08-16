@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Record } from '../entities/Record';
 
 export const useList = <T extends Record>(
@@ -8,7 +8,6 @@ export const useList = <T extends Record>(
   urlParams: string = ''
 ) => {
   const [records, setRecords] = useState<T[]>([]);
-  const [date, setDate] = useState(+new Date());
   const [activeRecord, setActiveRecord] = useState<T>(emptyRecord);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error>();
@@ -16,30 +15,32 @@ export const useList = <T extends Record>(
   const url = `http://localhost:4000/${path}`;
 
   // componentDidMount or variable date was changed
+
+  const callFetchFunction = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(undefined);
+      const result = await axios.get<T[]>(`${url}?${urlParams}`);
+      setRecords(result.data);
+    } catch (e) {
+      setError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [urlParams, url]);
+
   useEffect(() => {
-    const callFetchFunction = async () => {
-      try {
-        setLoading(true);
-        setError(undefined);
-        const result = await axios.get<T[]>(`${url}?${urlParams}`);
-        setRecords(result.data);
-      } catch (e) {
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    };
     callFetchFunction();
-  }, [date, urlParams, url]);
+  }, [callFetchFunction]);
 
   const deleteRecord = async (record: T) => {
     await axios.delete<T>(`${url}/${record.id}`);
-    setDate(+new Date());
+    callFetchFunction();
   };
 
   return {
     records,
-    setDate,
+    callFetchFunction,
     activeRecord,
     setActiveRecord,
     deleteRecord,

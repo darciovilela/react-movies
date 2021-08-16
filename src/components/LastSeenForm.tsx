@@ -4,11 +4,14 @@ import { useMutation } from '../hooks/useMutation';
 import { useForm } from '../hooks/useForm';
 
 interface IProps {
-  setDate: Function;
+  callFetchFunction: Function;
   activeRecord: Movie;
 }
 
-export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+export const LastSeenForm: React.FC<IProps> = ({
+  callFetchFunction,
+  activeRecord,
+}) => {
   const formParams = {
     favorite: false,
     latin: false,

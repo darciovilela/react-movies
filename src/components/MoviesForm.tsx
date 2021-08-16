@@ -5,11 +5,14 @@ import { useForm } from '../hooks/useForm';
 import { useEffect } from 'react';
 
 interface IProps {
-  setDate: Function;
+  callFetchFunction: Function;
   activeRecord: Movie;
 }
 
-export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+export const MoviesForm: React.FC<IProps> = ({
+  callFetchFunction,
+  activeRecord,
+}) => {
   const formParams = {
     favorite: true,
     latin: false,
@@ -25,9 +28,9 @@ export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   useEffect(() => {
     if (success) {
       setFormState(emptyMovie);
-      setDate(+new Date());
+      callFetchFunction();
     }
-  }, [success, setFormState, setDate]);
+  }, [success, setFormState, callFetchFunction]);
 
   return (
     <div>

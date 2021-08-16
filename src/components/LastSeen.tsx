@@ -9,7 +9,7 @@ export const LastSeen = () => {
     records,
     activeRecord,
     setActiveRecord,
-    setDate,
+    callFetchFunction,
     deleteRecord,
     loading,
     error,
@@ -25,7 +25,10 @@ export const LastSeen = () => {
     <div>
       <h1>My {records.length} last seen movies:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
-      <LastSeenForm setDate={setDate} activeRecord={activeRecord} />
+      <LastSeenForm
+        callFetchFunction={callFetchFunction}
+        activeRecord={activeRecord}
+      />
       <table className="center">
         <thead className="Lastseen-table-head">
           <tr>
