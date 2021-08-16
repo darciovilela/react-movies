@@ -1,3 +1,4 @@
+import { ErrorBox } from './ErrorBox';
 import { Movie } from '../entities/Movie';
 import { emptyMovie } from '../entities/Movie';
 import { useForm } from '../hooks/useForm';
@@ -20,11 +21,7 @@ export const LatinMoviesForm: React.FC<IProps> = ({
 
   return (
     <div>
-      {error && (
-        <div className="error">
-          <pre>{JSON.stringify(error, null, 2)}</pre>
-        </div>
-      )}
+      {error && <ErrorBox error={error} />}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Movie:</label>

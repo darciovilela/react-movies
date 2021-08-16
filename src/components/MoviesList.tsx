@@ -1,4 +1,5 @@
 import { MoviesForm } from './MoviesForm';
+import { ErrorBox } from './ErrorBox';
 import { emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
 
@@ -18,13 +19,7 @@ export const MoviesList = () => {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return (
-      <div className="error">
-        <pre>{JSON.stringify(error, null, 2)}</pre>
-      </div>
-    );
-  }
+  if (error) return <ErrorBox error={error} />;
 
   return (
     <div>
