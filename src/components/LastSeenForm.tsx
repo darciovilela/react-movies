@@ -1,6 +1,6 @@
 import { ErrorBox } from './ErrorBox';
 import { Movie } from '../entities/Movie';
-import { emptyMovie } from '../entities/Movie';
+import { useMutation } from '../hooks/useMutation';
 import { useForm } from '../hooks/useForm';
 
 interface IProps {
@@ -9,11 +9,16 @@ interface IProps {
 }
 
 export const LastSeenForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const { formState, handleChange, handleSubmit, error } = useForm(
-    setDate,
+  const formParams = {
+    favorite: false,
+    latin: false,
+    seen: true,
+  };
+  const { create, update, error } = useMutation(formParams);
+  const action = activeRecord.id ? update : create;
+  const { formState, setFormState, handleChange, handleSubmit } = useForm(
     activeRecord,
-    emptyMovie,
-    { favorite: false, latin: false, seen: true }
+    action
   );
 
   return (

@@ -1,7 +1,8 @@
 import { ErrorBox } from './ErrorBox';
-import { Movie } from '../entities/Movie';
-import { emptyMovie } from '../entities/Movie';
+import { emptyMovie, Movie } from '../entities/Movie';
+import { useMutation } from '../hooks/useMutation';
 import { useForm } from '../hooks/useForm';
+import { useEffect } from 'react';
 
 interface IProps {
   setDate: Function;
@@ -9,12 +10,24 @@ interface IProps {
 }
 
 export const MoviesForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const { formState, handleChange, handleSubmit, error } = useForm(
-    setDate,
+  const formParams = {
+    favorite: true,
+    latin: false,
+    seen: false,
+  };
+  const { create, update, error, success } = useMutation(formParams);
+  const action = activeRecord.id ? update : create;
+  const { formState, setFormState, handleChange, handleSubmit } = useForm(
     activeRecord,
-    emptyMovie,
-    { favorite: true, latin: false, seen: false }
+    action
   );
+
+  useEffect(() => {
+    if (success) {
+      setFormState(emptyMovie);
+      setDate(+new Date());
+    }
+  }, [success, setFormState, setDate]);
 
   return (
     <div>
