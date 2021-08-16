@@ -1,19 +1,19 @@
 import { LastSeenForm } from './LastSeenForm';
 import { ErrorBox } from './ErrorBox';
-import { emptyMovie } from '../entities/Movie';
+import { Movie, emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
 export const LastSeen = () => {
   const {
-    movies,
+    records,
     activeRecord,
     setActiveRecord,
     setDate,
-    deleteMovie,
+    deleteRecord,
     loading,
     error,
-  } = useList(emptyMovie, 'seen=true');
+  } = useList<Movie>(emptyMovie, 'movies', 'seen=true');
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,7 +23,7 @@ export const LastSeen = () => {
 
   return (
     <div>
-      <h1>My {movies.length} last seen movies:</h1>
+      <h1>My {records.length} last seen movies:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
       <LastSeenForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
@@ -37,7 +37,7 @@ export const LastSeen = () => {
           </tr>
         </thead>
         <tbody className="Lastseen-table-body">
-          {movies.map((item) => {
+          {records.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -53,7 +53,7 @@ export const LastSeen = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteMovie(item)}>X</button>
+                  <button onClick={() => deleteRecord(item)}>X</button>
                 </td>
                 <td>{item.name}</td>
                 <td>{item.about}</td>

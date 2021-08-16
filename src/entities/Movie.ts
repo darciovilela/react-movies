@@ -1,5 +1,7 @@
+import { Record } from './Record';
+
 // declaracao do que sera passado na interface
-export interface MovieFlags {
+export interface MovieFlags extends Record {
   favorite: boolean;
   latin: boolean;
   seen: boolean;

@@ -1,19 +1,19 @@
 import { LatinMoviesForm } from './LatinMoviesForm';
 import { ErrorBox } from './ErrorBox';
-import { emptyMovie } from '../entities/Movie';
+import { Movie, emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
 export const LatinMovies = () => {
   const {
-    movies,
+    records,
     activeRecord,
     setActiveRecord,
     setDate,
-    deleteMovie,
+    deleteRecord,
     loading,
     error,
-  } = useList(emptyMovie, 'latin=true');
+  } = useList<Movie>(emptyMovie, 'movies', 'latin=true');
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,7 +23,7 @@ export const LatinMovies = () => {
 
   return (
     <div>
-      <h1>{movies.length} Latin Movies that you must see:</h1>
+      <h1>{records.length} Latin Movies that you must see:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
       <LatinMoviesForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
@@ -37,7 +37,7 @@ export const LatinMovies = () => {
           </tr>
         </thead>
         <tbody className="LatinMovies-table-body">
-          {movies.map((item) => {
+          {records.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -53,7 +53,7 @@ export const LatinMovies = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteMovie(item)}>X</button>
+                  <button onClick={() => deleteRecord(item)}>X</button>
                 </td>
                 <td>{item.name}</td>
                 <td>{item.country}</td>

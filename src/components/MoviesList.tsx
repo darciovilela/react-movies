@@ -1,19 +1,19 @@
 import { MoviesForm } from './MoviesForm';
 import { ErrorBox } from './ErrorBox';
-import { emptyMovie } from '../entities/Movie';
+import { Movie, emptyMovie } from '../entities/Movie';
 import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
 export const MoviesList = () => {
   const {
-    movies,
+    records,
     activeRecord,
     setActiveRecord,
     setDate,
-    deleteMovie,
+    deleteRecord,
     loading,
     error,
-  } = useList(emptyMovie, 'favorite=true');
+  } = useList<Movie>(emptyMovie, 'movies', 'favorite=true');
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,7 +23,7 @@ export const MoviesList = () => {
 
   return (
     <div>
-      <h1>My {movies.length} Favorite Movies:</h1>
+      <h1>My {records.length} Favorite Movies:</h1>
       <button onClick={() => setActiveRecord(emptyMovie)}>Insert New</button>
       <MoviesForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
@@ -37,7 +37,7 @@ export const MoviesList = () => {
           </tr>
         </thead>
         <tbody className="Movie-table-body">
-          {movies.map((item) => {
+          {records.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -53,7 +53,7 @@ export const MoviesList = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteMovie(item)}>X</button>
+                  <button onClick={() => deleteRecord(item)}>X</button>
                 </td>
                 <td>{item.name}</td>
                 <td>{item.director}</td>

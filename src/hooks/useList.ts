@@ -1,11 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Movie } from '../entities/Movie';
+import { Record } from '../entities/Record';
 
-export const useList = (emptyMovie: Movie, urlParams: string) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+export const useList = <T extends Record>(
+  emptyRecord: T,
+  path: string,
+  urlParams: string
+) => {
+  const [records, setRecords] = useState<T[]>([]);
   const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Movie>(emptyMovie);
+  const [activeRecord, setActiveRecord] = useState<T>(emptyRecord);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error>();
 
@@ -15,10 +19,10 @@ export const useList = (emptyMovie: Movie, urlParams: string) => {
       try {
         setLoading(true);
         setError(undefined);
-        const result = await axios.get<Movie[]>(
-          `http://localhost:4000/movies?${urlParams}`
+        const result = await axios.get<T[]>(
+          `http://localhost:4000/${path}?${urlParams}`
         );
-        setMovies(result.data);
+        setRecords(result.data);
       } catch (e) {
         setError(e);
       } finally {
@@ -26,19 +30,19 @@ export const useList = (emptyMovie: Movie, urlParams: string) => {
       }
     };
     callFetchFunction();
-  }, [date, urlParams]);
+  }, [date, urlParams, path]);
 
-  const deleteMovie = async (movie: Movie) => {
-    await axios.delete<Movie>(`http://localhost:4000/movies/${movie.id}`);
+  const deleteRecord = async (record: T) => {
+    await axios.delete<T>(`http://localhost:4000/${path}/${record.id}`);
     setDate(+new Date());
   };
 
   return {
-    movies,
+    records,
     setDate,
     activeRecord,
     setActiveRecord,
-    deleteMovie,
+    deleteRecord,
     loading,
     error,
   };
