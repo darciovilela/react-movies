@@ -13,7 +13,7 @@ export const ActorsList = () => {
     deleteRecord,
     loading,
     error,
-  } = useList<Actor>(emptyActor, 'actors', '');
+  } = useList<Actor>(emptyActor, 'actors');
 
   if (loading) {
     return <div>Loading...</div>;
