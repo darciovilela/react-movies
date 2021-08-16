@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Actor, emptyActor } from './ActorsList';
+import { Actor, emptyActor } from '../entities/Actor';
 
 interface IProps {
   setDate: Function;

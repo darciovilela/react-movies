@@ -1,49 +1,29 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { ActorsForm } from './ActorsForm';
-
-// declaracao do que sera passado na interface
-export interface Actor {
-  id?: string;
-  name: string;
-  born: string;
-  city: string;
-}
-
-// estado inicial do form vazio
-export const emptyActor: Actor = {
-  name: '',
-  born: '',
-  city: '',
-};
+import { ErrorBox } from './ErrorBox';
+import { Actor, emptyActor } from '../entities/Actor';
+import { useList } from '../hooks/useList';
 
 // inicio do estado com array vazio
 export const ActorsList = () => {
-  const [actors, setActors] = useState<Actor[]>([]);
-  const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Actor>(emptyActor);
+  const {
+    records,
+    activeRecord,
+    setActiveRecord,
+    setDate,
+    deleteRecord,
+    loading,
+    error,
+  } = useList<Actor>(emptyActor, 'actors', '');
 
-  // componentDidMount or variable date was changed
-  useEffect(() => {
-    const callFetchFunction = async () => {
-      const result = await axios.get<Actor[]>('http://localhost:4000/actors');
-      setActors(result.data);
-    };
-    callFetchFunction();
-  }, [date]);
-
-  const deleteActor = async (actor: Actor) => {
-    await axios.delete<Actor>(`http://localhost:4000/actors/${actor.id}`);
-    setDate(+new Date());
-  };
-
-  if (!actors.length) {
-    return <div>Loading... (or empty)</div>;
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  if (error) return <ErrorBox error={error} />;
 
   return (
     <div>
-      <h1>My {actors.length} Favorite Actors:</h1>
+      <h1>My {records.length} Favorite Actors:</h1>
       <button onClick={() => setActiveRecord(emptyActor)}>Insert New</button>
       <ActorsForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
@@ -57,7 +37,7 @@ export const ActorsList = () => {
           </tr>
         </thead>
         <tbody className="Actors-table-body">
-          {actors.map((item) => {
+          {records.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -73,7 +53,7 @@ export const ActorsList = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteActor(item)}>X</button>
+                  <button onClick={() => deleteRecord(item)}>X</button>
                 </td>
                 <td>{item.name}</td>
                 <td>{item.born}</td>
