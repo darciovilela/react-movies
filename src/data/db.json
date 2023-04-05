@@ -248,6 +248,18 @@
       "latin": true,
       "seen": false,
       "id": 28
+    },
+    {
+      "name": "Come Play",
+      "about": "Oliver is a lonely young boy who feels different from everyone else. Desperate for a friend, he seeks solace and refuge in his ever-present cell phone.",
+      "country": "",
+      "director": "",
+      "rating": "4",
+      "released": "",
+      "favorite": false,
+      "latin": false,
+      "seen": true,
+      "id": 29
     }
   ],
   "actors": [

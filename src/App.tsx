@@ -7,29 +7,29 @@ import { ActorsList } from './components/ActorsList';
 import { LastSeen } from './components/LastSeen';
 import { LatinMovies } from './components/LatinMovies';
 
-function App() {
-  const [page, setPage] = useState('Movies');
+const App = () => {
+	const [page, setPage] = useState('Movies');
 
-  const swithPage = () => {
-    switch (page) {
-      case 'Movies':
-        return <MoviesList />;
-      case 'Actors':
-        return <ActorsList />;
-      case 'Last Seen':
-        return <LastSeen />;
-      case 'Latin Movies':
-        return <LatinMovies />;
-    }
-  };
+	const swithPage = () => {
+		switch (page) {
+			case 'Movies':
+				return <MoviesList />;
+			case 'Actors':
+				return <ActorsList />;
+			case 'Last Seen':
+				return <LastSeen />;
+			case 'Latin Movies':
+				return <LatinMovies />;
+		}
+	};
 
-  return (
-    <div className="App">
-      <Header page={page} setPage={setPage} />
-      {swithPage()}
-      <Footer />
-    </div>
-  );
-}
+	return (
+		<div className="App">
+			<Header page={page} setPage={setPage} />
+			{swithPage()}
+			<Footer />
+		</div>
+	);
+};
 
 export default App;
