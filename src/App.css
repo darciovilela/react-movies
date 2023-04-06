@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
   background-color: blanchedalmond;
@@ -13,8 +19,7 @@
 
 .p-header {
   font-size: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
 }
 
 span {
@@ -31,8 +36,7 @@ span {
 .App-header ul {
   list-style-type: none;
   font-size: 18px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
 }
 
 .App-header ul li {
@@ -57,8 +61,7 @@ span {
 h1 {
   font-size: 30px;
   margin-top: 70px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
 }
 .Movie-table-head {
   background-color: #4e6183;
